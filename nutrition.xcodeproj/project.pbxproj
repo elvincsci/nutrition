@@ -10,6 +10,11 @@
 		0C3AAD8E46960257D8BB481E /* Pods_nutritionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A16CD9179E695D9344CE69FB /* Pods_nutritionTests.framework */; };
 		0CEC92B30B294B282046E6E2 /* Pods_nutrition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB98251982A3B7680DF51CDD /* Pods_nutrition.framework */; };
 		5E88D381388F68C8D95ABAAA /* Pods_nutritionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B355F2FCF4F241D9CC9826F7 /* Pods_nutritionUITests.framework */; };
+		E56FA25F1FCCA08200B885A8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E56FA25E1FCCA08200B885A8 /* GoogleService-Info.plist */; };
+		E58B8A3A1FCB514000045045 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58B8A391FCB514000045045 /* TabController.swift */; };
+		E5EF79011FCB854B003302C2 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EF79001FCB854B003302C2 /* SettingViewController.swift */; };
+		E5EF79031FCB8827003302C2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EF79021FCB8827003302C2 /* HomeViewController.swift */; };
+		E5EF79051FCB8A1C003302C2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EF79041FCB8A1C003302C2 /* MainViewController.swift */; };
 		E5F5A7A61FC9CFF800FCD6D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F5A7A51FC9CFF800FCD6D9 /* AppDelegate.swift */; };
 		E5F5A7A81FC9CFF800FCD6D9 /* landingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F5A7A71FC9CFF800FCD6D9 /* landingVC.swift */; };
 		E5F5A7AB1FC9CFF800FCD6D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5F5A7A91FC9CFF800FCD6D9 /* Main.storyboard */; };
@@ -18,7 +23,6 @@
 		E5F5A7BB1FC9CFF800FCD6D9 /* nutritionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F5A7BA1FC9CFF800FCD6D9 /* nutritionTests.swift */; };
 		E5F5A7C61FC9CFF800FCD6D9 /* nutritionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F5A7C51FC9CFF800FCD6D9 /* nutritionUITests.swift */; };
 		E5F5A7D61FC9E31600FCD6D9 /* loginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F5A7D51FC9E31600FCD6D9 /* loginVC.swift */; };
-		E5F5A7D81FCA3FCD00FCD6D9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5F5A7D71FCA3FCD00FCD6D9 /* GoogleService-Info.plist */; };
 		E5F5A7DB1FCA5C3800FCD6D9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F5A7DA1FCA5C3800FCD6D9 /* User.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +52,11 @@
 		B355F2FCF4F241D9CC9826F7 /* Pods_nutritionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nutritionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1F5AECBAD9CC726E7D446E2 /* Pods-nutritionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nutritionTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-nutritionTests/Pods-nutritionTests.release.xcconfig"; sourceTree = "<group>"; };
 		DB98251982A3B7680DF51CDD /* Pods_nutrition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nutrition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E56FA25E1FCCA08200B885A8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E58B8A391FCB514000045045 /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
+		E5EF79001FCB854B003302C2 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		E5EF79021FCB8827003302C2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E5EF79041FCB8A1C003302C2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E5F5A7A21FC9CFF800FCD6D9 /* nutrition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nutrition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5F5A7A51FC9CFF800FCD6D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5F5A7A71FC9CFF800FCD6D9 /* landingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = landingVC.swift; sourceTree = "<group>"; };
@@ -62,7 +71,6 @@
 		E5F5A7C51FC9CFF800FCD6D9 /* nutritionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nutritionUITests.swift; sourceTree = "<group>"; };
 		E5F5A7C71FC9CFF800FCD6D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5F5A7D51FC9E31600FCD6D9 /* loginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginVC.swift; sourceTree = "<group>"; };
-		E5F5A7D71FCA3FCD00FCD6D9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E5F5A7DA1FCA5C3800FCD6D9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EE56BE6DA2D6848434D8A512 /* Pods-nutrition.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nutrition.release.xcconfig"; path = "Pods/Target Support Files/Pods-nutrition/Pods-nutrition.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -176,7 +184,11 @@
 		E5F5A7D31FC9E11700FCD6D9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E58B8A391FCB514000045045 /* TabController.swift */,
 				E5F5A7A71FC9CFF800FCD6D9 /* landingVC.swift */,
+				E5EF79001FCB854B003302C2 /* SettingViewController.swift */,
+				E5EF79021FCB8827003302C2 /* HomeViewController.swift */,
+				E5EF79041FCB8A1C003302C2 /* MainViewController.swift */,
 				E5F5A7D51FC9E31600FCD6D9 /* loginVC.swift */,
 			);
 			path = ViewControllers;
@@ -185,7 +197,7 @@
 		E5F5A7D41FC9E19A00FCD6D9 /* Google */ = {
 			isa = PBXGroup;
 			children = (
-				E5F5A7D71FCA3FCD00FCD6D9 /* GoogleService-Info.plist */,
+				E56FA25E1FCCA08200B885A8 /* GoogleService-Info.plist */,
 			);
 			path = Google;
 			sourceTree = "<group>";
@@ -315,7 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5F5A7B01FC9CFF800FCD6D9 /* LaunchScreen.storyboard in Resources */,
-				E5F5A7D81FCA3FCD00FCD6D9 /* GoogleService-Info.plist in Resources */,
+				E56FA25F1FCCA08200B885A8 /* GoogleService-Info.plist in Resources */,
 				E5F5A7AD1FC9CFF800FCD6D9 /* Assets.xcassets in Resources */,
 				E5F5A7AB1FC9CFF800FCD6D9 /* Main.storyboard in Resources */,
 			);
@@ -381,6 +393,8 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/QuickTableViewController/QuickTableViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/Weakify/Weakify.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -389,6 +403,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QuickTableViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Weakify.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -503,10 +519,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5EF79031FCB8827003302C2 /* HomeViewController.swift in Sources */,
 				E5F5A7DB1FCA5C3800FCD6D9 /* User.swift in Sources */,
 				E5F5A7A81FC9CFF800FCD6D9 /* landingVC.swift in Sources */,
 				E5F5A7D61FC9E31600FCD6D9 /* loginVC.swift in Sources */,
 				E5F5A7A61FC9CFF800FCD6D9 /* AppDelegate.swift in Sources */,
+				E58B8A3A1FCB514000045045 /* TabController.swift in Sources */,
+				E5EF79011FCB854B003302C2 /* SettingViewController.swift in Sources */,
+				E5EF79051FCB8A1C003302C2 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -96,6 +96,9 @@ class loginVC: UIViewController {
     
     @IBAction func signin(_ sender: Any) {
         
+
+
+        
         for item in self.inputFields {
             item.resignFirstResponder()
         }
@@ -146,7 +149,9 @@ class loginVC: UIViewController {
     }
     
     func pushTomainView() {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Navigation") as! landingVC
+        self.loginPassword.text = ""
+        self.loginEmail.text = ""
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Tab") as! TabController
         self.show(vc, sender: nil)
     }
     

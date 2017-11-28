@@ -350,10 +350,73 @@
             </objects>
             <point key="canvasLocation" x="632.79999999999995" y="332.38380809595208"/>
         </scene>
+        <!--Add-->
+        <scene sceneID="orW-3X-AZA">
+            <objects>
+                <viewController storyboardIdentifier="main" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uKQ-zH-80M" customClass="MainViewController" customModule="nutrition" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kfa-Jp-SuA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="2Ks-7V-8k6"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Add" image="add" selectedImage="add" id="axK-fs-DW6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CPn-oM-I6g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2377" y="333"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="REQ-WI-8Kq">
+            <objects>
+                <viewController storyboardIdentifier="Home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sAi-Q2-GwP" customClass="HomeViewController" customModule="nutrition" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="K4s-Ck-7pm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="t9o-Od-ftx"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" selectedImage="house" id="Y0c-Hj-WSx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AzU-Ia-vy0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2377" y="-358"/>
+        </scene>
+        <!--Tab Controller-->
+        <scene sceneID="Fff-cm-xzs">
+            <objects>
+                <tabBarController storyboardIdentifier="Tab" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Gw4-Wg-B74" customClass="TabController" customModule="nutrition" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5cx-kd-0bE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="sAi-Q2-GwP" kind="relationship" relationship="viewControllers" id="ATn-65-Zjt"/>
+                        <segue destination="uKQ-zH-80M" kind="relationship" relationship="viewControllers" id="njS-2g-TvR"/>
+                        <segue destination="TU9-Pb-u7w" kind="relationship" relationship="viewControllers" id="n2y-a2-pwQ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f9u-U8-lXX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1554" y="333"/>
+        </scene>
+        <!--Setting View Controller-->
+        <scene sceneID="CBn-wh-52p">
+            <objects>
+                <viewController storyboardIdentifier="settings" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TU9-Pb-u7w" customClass="SettingViewController" customModule="nutrition" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="more" id="Wd7-cF-zme"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rca-on-w6v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2376.8000000000002" y="1114.992503748126"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="add" width="29" height="30"/>
         <image name="button" width="60" height="20"/>
         <image name="email" width="24" height="24"/>
+        <image name="house" width="30" height="30"/>
         <image name="name" width="24" height="24"/>
         <image name="password" width="24" height="24"/>
         <image name="profile pic" width="100" height="100"/>
