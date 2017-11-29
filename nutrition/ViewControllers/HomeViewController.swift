@@ -8,18 +8,13 @@
 
 import UIKit
 
-class HomeViewController: UINavigationController {
-
-    var navBar: UINavigationBar = UINavigationBar()
-
+class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "Home"
-
+        
         // Do any additional setup after loading the view.
-        title = "More"
 
         // Do any additional setup after loading the view.
     }
@@ -42,3 +37,21 @@ class HomeViewController: UINavigationController {
     */
 
 }
+
+class VideoCell: UITableViewCell {
+    
+
+    @IBOutlet var descriptionLB: UILabel!
+    @IBOutlet var titleLB: UILabel!
+    @IBOutlet var videoThumbnail: UIImageView!
+
+    
+    
+    
+
+    
+
+}
+
+
+

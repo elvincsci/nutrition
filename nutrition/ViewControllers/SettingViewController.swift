@@ -24,8 +24,7 @@ class SettingViewController: QuickTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "QuickTableViewController"
-        
+
         let time = #imageLiteral(resourceName: "iconmonstr-time")
         
         tableContents = [

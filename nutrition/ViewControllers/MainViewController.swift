@@ -15,10 +15,8 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Main"
         
         // Do any additional setup after loading the view.
-        title = "Main"
 
 
         // Do any additional setup after loading the view.
