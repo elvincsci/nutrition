@@ -41,6 +41,7 @@ class dashboardVC: UINavigationController {
         extraViewsContainer.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 1).isActive = true
         extraViewsContainer.backgroundColor = UIColor.clear
         //ContactsView customization
+        
         extraViewsContainer.addSubview(self.contactsView)
         self.contactsView.translatesAutoresizingMaskIntoConstraints = false
         self.contactsView.topAnchor.constraint(equalTo: extraViewsContainer.topAnchor).isActive = true
@@ -62,7 +63,7 @@ class dashboardVC: UINavigationController {
     
     func dismissExtraViews() {
         self.topAnchorContraint.constant = 1000
-        self.tabBarController?.tabBar.isHidden = true
+        self.tabBarController?.tabBar.isHidden = false
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn, animations: {
             self.view.layoutIfNeeded()
             self.darkView.alpha = 0
@@ -76,10 +77,11 @@ class dashboardVC: UINavigationController {
 
     }
     
+    
+    
     @objc func showExtraViews(notification: NSNotification)  {
-
         
-        let transform = CGAffineTransform.init(scaleX: 0.94, y: 0.94)
+        let transform = CGAffineTransform.init(scaleX: 1.00, y: 1.00)
         self.topAnchorContraint.constant = 0
         self.darkView.isHidden = false
         self.tabBarController?.tabBar.isHidden = true
@@ -97,21 +99,18 @@ class dashboardVC: UINavigationController {
             case .profile: break
                 //self.profileView.isHidden = false
             case .preview: break
-//                self.previewView.isHidden = false
-//                self.previewImageView.image = notification.userInfo?["pic"] as? UIImage
-//                self.scrollView.contentSize = self.previewImageView.frame.size
             case .map: break
-//                self.mapPreviewView.isHidden = false
-//                let coordinate = notification.userInfo?["location"] as? CLLocationCoordinate2D
-//                let annotation = MKPointAnnotation.init()
-//                annotation.coordinate = coordinate!
-//                self.mapVIew.addAnnotation(annotation)
-//                self.mapVIew.showAnnotations(self.mapVIew.annotations, animated: false)
             }
         }
         
     }
 
+    @IBAction func closeView(_ sender: Any) {
+        self.dismissExtraViews()
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.customization()
