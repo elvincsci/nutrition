@@ -10,13 +10,41 @@ import UIKit
 
 class MainViewController: UIViewController {
 
-    var navBar: UINavigationBar = UINavigationBar()
+    @IBOutlet var container: UIView!
+    var topAnchorContraint: NSLayoutConstraint!
 
+    
+    func customization() {
+        
+        
+        
+        //right bar button
+        
+        let icon = UIImage.init(named: "add1")?.withRenderingMode(.alwaysOriginal)
+        let rightButton = UIBarButtonItem.init(image: icon!, style: .plain, target: self, action: #selector(MainViewController.showContacts))
+        self.navigationItem.rightBarButtonItem = rightButton
+        
+    }
+    
+    //Shows profile extra view
+    @objc func showProfile() {
+        let info = ["viewType" : ShowExtraView.profile]
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showExtraView"), object: nil, userInfo: info)
+        self.inputView?.isHidden = true
+    }
+    
+    
+   // Shows contacts extra view
+    @objc func showContacts() {
+        let info = ["viewType" : ShowExtraView.contacts]
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showExtraView"), object: nil, userInfo: info)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        self.customization()
 
 
         // Do any additional setup after loading the view.

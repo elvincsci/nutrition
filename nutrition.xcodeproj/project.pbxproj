@@ -11,7 +11,11 @@
 		0CEC92B30B294B282046E6E2 /* Pods_nutrition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB98251982A3B7680DF51CDD /* Pods_nutrition.framework */; };
 		5E88D381388F68C8D95ABAAA /* Pods_nutritionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B355F2FCF4F241D9CC9826F7 /* Pods_nutritionUITests.framework */; };
 		E56FA25F1FCCA08200B885A8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E56FA25E1FCCA08200B885A8 /* GoogleService-Info.plist */; };
+		E56FA26A1FCFCADD00B885A8 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56FA2691FCFCADD00B885A8 /* Video.swift */; };
+		E56FA26D1FCFE28700B885A8 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56FA26C1FCFE28700B885A8 /* ApiService.swift */; };
 		E58B8A3A1FCB514000045045 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58B8A391FCB514000045045 /* TabController.swift */; };
+		E5E01E361FD1E45500B6A74F /* dashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E01E351FD1E45500B6A74F /* dashboardVC.swift */; };
+		E5E01E391FD2471500B6A74F /* Helper Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E01E381FD2471500B6A74F /* Helper Files.swift */; };
 		E5EF79011FCB854B003302C2 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EF79001FCB854B003302C2 /* SettingViewController.swift */; };
 		E5EF79031FCB8827003302C2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EF79021FCB8827003302C2 /* HomeViewController.swift */; };
 		E5EF79051FCB8A1C003302C2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EF79041FCB8A1C003302C2 /* MainViewController.swift */; };
@@ -53,7 +57,11 @@
 		D1F5AECBAD9CC726E7D446E2 /* Pods-nutritionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nutritionTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-nutritionTests/Pods-nutritionTests.release.xcconfig"; sourceTree = "<group>"; };
 		DB98251982A3B7680DF51CDD /* Pods_nutrition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nutrition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E56FA25E1FCCA08200B885A8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E56FA2691FCFCADD00B885A8 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		E56FA26C1FCFE28700B885A8 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		E58B8A391FCB514000045045 /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
+		E5E01E351FD1E45500B6A74F /* dashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dashboardVC.swift; sourceTree = "<group>"; };
+		E5E01E381FD2471500B6A74F /* Helper Files.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helper Files.swift"; sourceTree = "<group>"; };
 		E5EF79001FCB854B003302C2 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		E5EF79021FCB8827003302C2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E5EF79041FCB8A1C003302C2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +134,22 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E56FA26B1FCFE22B00B885A8 /* Api service */ = {
+			isa = PBXGroup;
+			children = (
+				E56FA26C1FCFE28700B885A8 /* ApiService.swift */,
+			);
+			path = "Api service";
+			sourceTree = "<group>";
+		};
+		E5E01E371FD246CC00B6A74F /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				E5E01E381FD2471500B6A74F /* Helper Files.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		E5F5A7991FC9CFF800FCD6D9 = {
 			isa = PBXGroup;
 			children = (
@@ -151,11 +175,13 @@
 		E5F5A7A41FC9CFF800FCD6D9 /* nutrition */ = {
 			isa = PBXGroup;
 			children = (
+				E56FA26B1FCFE22B00B885A8 /* Api service */,
 				E5F5A7D91FCA5C0100FCD6D9 /* model */,
 				E5F5A7A51FC9CFF800FCD6D9 /* AppDelegate.swift */,
 				E5F5A7A91FC9CFF800FCD6D9 /* Main.storyboard */,
 				E5F5A7D41FC9E19A00FCD6D9 /* Google */,
 				E5F5A7D31FC9E11700FCD6D9 /* ViewControllers */,
+				E5E01E371FD246CC00B6A74F /* Helper */,
 				E5F5A7AC1FC9CFF800FCD6D9 /* Assets.xcassets */,
 				E5F5A7AE1FC9CFF800FCD6D9 /* LaunchScreen.storyboard */,
 				E5F5A7B11FC9CFF800FCD6D9 /* Info.plist */,
@@ -190,6 +216,7 @@
 				E5EF79021FCB8827003302C2 /* HomeViewController.swift */,
 				E5EF79041FCB8A1C003302C2 /* MainViewController.swift */,
 				E5F5A7D51FC9E31600FCD6D9 /* loginVC.swift */,
+				E5E01E351FD1E45500B6A74F /* dashboardVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -206,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				E5F5A7DA1FCA5C3800FCD6D9 /* User.swift */,
+				E56FA2691FCFCADD00B885A8 /* Video.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -522,8 +550,12 @@
 				E5EF79031FCB8827003302C2 /* HomeViewController.swift in Sources */,
 				E5F5A7DB1FCA5C3800FCD6D9 /* User.swift in Sources */,
 				E5F5A7A81FC9CFF800FCD6D9 /* landingVC.swift in Sources */,
+				E5E01E361FD1E45500B6A74F /* dashboardVC.swift in Sources */,
 				E5F5A7D61FC9E31600FCD6D9 /* loginVC.swift in Sources */,
+				E56FA26A1FCFCADD00B885A8 /* Video.swift in Sources */,
 				E5F5A7A61FC9CFF800FCD6D9 /* AppDelegate.swift in Sources */,
+				E56FA26D1FCFE28700B885A8 /* ApiService.swift in Sources */,
+				E5E01E391FD2471500B6A74F /* Helper Files.swift in Sources */,
 				E58B8A3A1FCB514000045045 /* TabController.swift in Sources */,
 				E5EF79011FCB854B003302C2 /* SettingViewController.swift in Sources */,
 				E5EF79051FCB8A1C003302C2 /* MainViewController.swift in Sources */,

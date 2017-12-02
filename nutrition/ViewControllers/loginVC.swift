@@ -71,8 +71,6 @@ class loginVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    
     @IBAction func switchView(_ sender: Any) {
         
         if self.isLoginViewVisible {
@@ -95,10 +93,6 @@ class loginVC: UIViewController {
     }
     
     @IBAction func signin(_ sender: Any) {
-        
-
-
-        
         for item in self.inputFields {
             item.resignFirstResponder()
         }

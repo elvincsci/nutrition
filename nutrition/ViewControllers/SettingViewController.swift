@@ -29,6 +29,15 @@ class SettingViewController: QuickTableViewController {
         
         tableContents = [
         
+            Section(title: "Navigation", rows: [
+                
+                NavigationRow(title: "Devices", subtitle: .none, icon: Icon(image: #imageLiteral(resourceName: "device")), action: weakify(self, type(of: self).showDetail)),
+                
+                NavigationRow(title: "Edit Profile", subtitle: .none, icon: Icon(image: #imageLiteral(resourceName: "profile")), action: weakify(self, type(of: self).showDetail)),
+                
+                ]),
+
+            
             
             Section(title: "SECURITY", rows: [
 
@@ -37,7 +46,8 @@ class SettingViewController: QuickTableViewController {
 
                 
                 ]),
-            
+        
+
             Section(title: "Reminder", rows: [
                 SwitchRow<SwitchCell>(title: "Checkup Reminder", switchValue: false, icon: Icon(image: time), action: weakify(self, type(of: self).didToggleSwitch))
                 ]),
