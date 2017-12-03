@@ -534,16 +534,15 @@
                             </collectionViewFlowLayout>
                             <cells/>
                         </collectionView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zM3-3i-Cea" customClass="RoundedButton" customModule="nutrition" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zM3-3i-Cea">
                             <rect key="frame" x="133" y="262" width="120" height="40"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="Pjk-3Q-jLQ"/>
                                 <constraint firstAttribute="width" constant="120" id="oY7-le-EMl"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                            <state key="normal" title="Close" backgroundImage="button">
-                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
+                            <state key="normal" title="Close"/>
                             <connections>
                                 <action selector="closeView:" destination="BJP-A6-eBi" eventType="touchUpInside" id="Lhe-xX-hSR"/>
                             </connections>

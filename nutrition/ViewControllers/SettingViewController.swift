@@ -40,13 +40,12 @@ class SettingViewController: QuickTableViewController {
             
             
             Section(title: "SECURITY", rows: [
-
                 
-                SwitchRow<SwitchCell>(title: "Use Touch ID", switchValue: false, icon: Icon(image: #imageLiteral(resourceName: "finger2")), action: weakify(self, type(of: self).didToggleSwitch))
+                SwitchRow<SwitchCell>(title: "Use Touch ID", switchValue: false, icon: Icon(image: #imageLiteral(resourceName: "finger2")), action: weakify(self, type(of: self).didToggleSwitch)),
 
+                NavigationRow(title: "Notification", subtitle: .none, icon: Icon(image: #imageLiteral(resourceName: "profile")), action: weakify(self, type(of: self).showDetail)),
                 
                 ]),
-        
 
             Section(title: "Reminder", rows: [
                 SwitchRow<SwitchCell>(title: "Checkup Reminder", switchValue: false, icon: Icon(image: time), action: weakify(self, type(of: self).didToggleSwitch))
@@ -57,9 +56,6 @@ class SettingViewController: QuickTableViewController {
                 TapActionRow<TapActionCell>(title: "Logout", action: weakify(self, type(of: self).showAlert))
                
                 ]),
-
-            
-            
         ]
     }
     
@@ -80,7 +76,6 @@ class SettingViewController: QuickTableViewController {
         
         let state = "\(option.title) is " + (option.isSelected ? "selected" : "deselected")
         print(state)
-        showDebuggingText(state)
     }
     
     private func didToggleSwitch(_ sender: Row) {
@@ -90,7 +85,6 @@ class SettingViewController: QuickTableViewController {
         if let row = sender as? SwitchRow {
             let state = "\(row.title) = \(row.switchValue)"
             print(state)
-            showDebuggingText(state)
         }
     }
     
@@ -114,14 +108,8 @@ class SettingViewController: QuickTableViewController {
         controller.view.backgroundColor = UIColor.white
         controller.title = detail
         navigationController?.pushViewController(controller, animated: true)
-        showDebuggingText(detail + " is selected")
     }
-    
-    private func showDebuggingText(_ text: String) {
-        debugging.footer = text
-        let indexSet: IndexSet? = tableContents.index(where: { $0 === debugging }).map { [$0] }
-        tableView.reloadSections(indexSet ?? [], with: .fade)
-    }
+
     
 }
 

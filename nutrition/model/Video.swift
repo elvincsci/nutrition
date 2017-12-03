@@ -11,7 +11,7 @@ import UIKit
 class SafeJsonObject: NSObject {
     
     override func setValue(_ value: Any?, forKey key: String) {
-        let uppercasedFirstCharacter = String(key.characters.first!).uppercased()
+        let uppercasedFirstCharacter = String(key.first!).uppercased()
         
         //        let range = key.startIndex...key.characters.index(key.startIndex, offsetBy: 0)
         //        let selectorString = key.replacingCharacters(in: range, with: uppercasedFirstCharacter)
@@ -39,16 +39,9 @@ class Video: SafeJsonObject {
     var uploadDate: Date?
     var duration: NSNumber?
     
-    var channel: Channel?
     
     override func setValue(_ value: Any?, forKey key: String) {
-        if key == "channel" {
-            //custom channel setup
-            self.channel = Channel()
-            self.channel?.setValuesForKeys(value as! [String: AnyObject])
-        } else {
             super.setValue(value, forKey: key)
-        }
     }
     
     init(dictionary: [String: AnyObject]) {
@@ -58,9 +51,5 @@ class Video: SafeJsonObject {
     
 }
 
-class Channel: SafeJsonObject {
-    var name: String?
-    var profile_image_name: String?
-}
 
 
