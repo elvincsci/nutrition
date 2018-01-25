@@ -10,6 +10,8 @@
 		0C3AAD8E46960257D8BB481E /* Pods_nutritionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A16CD9179E695D9344CE69FB /* Pods_nutritionTests.framework */; };
 		0CEC92B30B294B282046E6E2 /* Pods_nutrition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB98251982A3B7680DF51CDD /* Pods_nutrition.framework */; };
 		5E88D381388F68C8D95ABAAA /* Pods_nutritionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B355F2FCF4F241D9CC9826F7 /* Pods_nutritionUITests.framework */; };
+		E557584D2019472600A2BC4A /* NewsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E557584C2019472600A2BC4A /* NewsListTableViewCell.swift */; };
+		E557584F201966A400A2BC4A /* dashboardCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E557584E201966A400A2BC4A /* dashboardCellTableViewCell.swift */; };
 		E56FA25F1FCCA08200B885A8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E56FA25E1FCCA08200B885A8 /* GoogleService-Info.plist */; };
 		E56FA26A1FCFCADD00B885A8 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56FA2691FCFCADD00B885A8 /* Video.swift */; };
 		E56FA26D1FCFE28700B885A8 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56FA26C1FCFE28700B885A8 /* ApiService.swift */; };
@@ -56,6 +58,8 @@
 		B355F2FCF4F241D9CC9826F7 /* Pods_nutritionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nutritionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1F5AECBAD9CC726E7D446E2 /* Pods-nutritionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nutritionTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-nutritionTests/Pods-nutritionTests.release.xcconfig"; sourceTree = "<group>"; };
 		DB98251982A3B7680DF51CDD /* Pods_nutrition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nutrition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E557584C2019472600A2BC4A /* NewsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListTableViewCell.swift; sourceTree = "<group>"; };
+		E557584E201966A400A2BC4A /* dashboardCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dashboardCellTableViewCell.swift; sourceTree = "<group>"; };
 		E56FA25E1FCCA08200B885A8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E56FA2691FCFCADD00B885A8 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		E56FA26C1FCFE28700B885A8 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
@@ -214,7 +218,9 @@
 				E5F5A7A71FC9CFF800FCD6D9 /* landingVC.swift */,
 				E5EF79001FCB854B003302C2 /* SettingViewController.swift */,
 				E5EF79021FCB8827003302C2 /* HomeViewController.swift */,
+				E557584C2019472600A2BC4A /* NewsListTableViewCell.swift */,
 				E5EF79041FCB8A1C003302C2 /* MainViewController.swift */,
+				E557584E201966A400A2BC4A /* dashboardCellTableViewCell.swift */,
 				E5F5A7D51FC9E31600FCD6D9 /* loginVC.swift */,
 				E5E01E351FD1E45500B6A74F /* dashboardVC.swift */,
 			);
@@ -547,6 +553,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E557584F201966A400A2BC4A /* dashboardCellTableViewCell.swift in Sources */,
 				E5EF79031FCB8827003302C2 /* HomeViewController.swift in Sources */,
 				E5F5A7DB1FCA5C3800FCD6D9 /* User.swift in Sources */,
 				E5F5A7A81FC9CFF800FCD6D9 /* landingVC.swift in Sources */,
@@ -559,6 +566,7 @@
 				E58B8A3A1FCB514000045045 /* TabController.swift in Sources */,
 				E5EF79011FCB854B003302C2 /* SettingViewController.swift in Sources */,
 				E5EF79051FCB8A1C003302C2 /* MainViewController.swift in Sources */,
+				E557584D2019472600A2BC4A /* NewsListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

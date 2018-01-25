@@ -8,22 +8,30 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! dashboardCellTableViewCell
+        //cell.set(video: self.videos[indexPath.row])
+        return cell
+    }
+    
 
     @IBOutlet var container: UIView!
     var topAnchorContraint: NSLayoutConstraint!
 
     
     func customization() {
-        
-        
-        
         //right bar button
         
         let icon = UIImage.init(named: "add1")?.withRenderingMode(.alwaysOriginal)
         let rightButton = UIBarButtonItem.init(image: icon!, style: .plain, target: self, action: #selector(MainViewController.showContacts))
         self.navigationItem.rightBarButtonItem = rightButton
-        
     }
     
     //Shows profile extra view
@@ -65,5 +73,5 @@ class MainViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
+

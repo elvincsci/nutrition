@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 import Firebase
 
-
 class User: NSObject {
     
     var id: String?
