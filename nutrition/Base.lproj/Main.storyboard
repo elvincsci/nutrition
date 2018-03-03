@@ -48,7 +48,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xcc-dJ-lH2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-284" y="548"/>
+            <point key="canvasLocation" x="-284" y="547.37631184407803"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="EXR-QV-fuJ">
@@ -360,7 +360,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="140" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vk4-Yj-L0B">
-                                <rect key="frame" x="0.0" y="32" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="571"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="0.21960784310000001" green="0.21960784310000001" blue="0.2784313725" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
@@ -561,6 +561,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rca-on-w6v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3670" y="1613"/>
+        </scene>
+        <!--Device View Controller-->
+        <scene sceneID="DhA-pv-I88">
+            <objects>
+                <viewController storyboardIdentifier="device" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nFX-EG-jF1" customClass="deviceViewController" customModule="nutrition" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w3Z-qf-fBr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Nokia account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cox-Bt-LoV">
+                                <rect key="frame" x="26" y="20" width="287" height="299"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KoE-E8-dve">
+                                <rect key="frame" x="26" y="366" width="333" height="77"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="77" id="F42-wC-w3p"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Add">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="addButton:" destination="nFX-EG-jF1" eventType="touchUpInside" id="5jK-Bj-nC1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Cox-Bt-LoV" firstAttribute="leading" secondItem="KoE-E8-dve" secondAttribute="leading" id="9Pb-RU-u16"/>
+                            <constraint firstItem="NcL-sG-gpX" firstAttribute="trailing" secondItem="Cox-Bt-LoV" secondAttribute="trailing" constant="62" id="Dxn-gG-MoC"/>
+                            <constraint firstItem="KoE-E8-dve" firstAttribute="trailing" secondItem="w3Z-qf-fBr" secondAttribute="trailingMargin" id="JQO-4m-mAv"/>
+                            <constraint firstItem="KoE-E8-dve" firstAttribute="top" secondItem="Cox-Bt-LoV" secondAttribute="bottom" constant="47" id="MfB-Hv-yEn"/>
+                            <constraint firstItem="Cox-Bt-LoV" firstAttribute="leading" secondItem="NcL-sG-gpX" secondAttribute="leading" constant="26" id="XbL-lx-Xln"/>
+                            <constraint firstItem="NcL-sG-gpX" firstAttribute="bottom" secondItem="KoE-E8-dve" secondAttribute="bottom" constant="224" id="dkA-A8-U7e"/>
+                            <constraint firstItem="Cox-Bt-LoV" firstAttribute="top" secondItem="NcL-sG-gpX" secondAttribute="top" id="yHE-ur-A7t"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NcL-sG-gpX"/>
+                    </view>
+                    <connections>
+                        <outlet property="labelNokia" destination="Cox-Bt-LoV" id="U8v-P3-J5m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rii-Te-b4D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5189.6000000000004" y="1594.4527736131936"/>
         </scene>
         <!--Home-->
         <scene sceneID="pGd-fR-zgb">

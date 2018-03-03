@@ -10,7 +10,9 @@ import UIKit
 
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
+ 
     
+    //MARK: Delegates
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
     }
@@ -21,10 +23,12 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        NotificationCenter.default.post(name: NSNotification.Name("open"), object: nil)
+    }
 
     @IBOutlet var container: UIView!
     var topAnchorContraint: NSLayoutConstraint!
-
     
     func customization() {
         //right bar button

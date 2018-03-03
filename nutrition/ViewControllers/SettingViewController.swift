@@ -9,6 +9,7 @@
 import UIKit
 import QuickTableViewController
 import Weakify
+import SafariServices
 
 
 class SettingViewController: QuickTableViewController {
@@ -31,7 +32,11 @@ class SettingViewController: QuickTableViewController {
         
             Section(title: "Navigation", rows: [
                 
-                NavigationRow(title: "Devices", subtitle: .none, icon: Icon(image: #imageLiteral(resourceName: "device")), action: weakify(self, type(of: self).showDetail)),
+                NavigationRow(title: "Shop Collections", subtitle: .none, icon: Icon(image: #imageLiteral(resourceName: "device")), action: weakify(self, type(of: self).showShop)),
+                
+                NavigationRow(title: "Messages", subtitle: .none, icon: Icon(image: #imageLiteral(resourceName: "device")), action: weakify(self, type(of: self).showMessages)),
+                
+                NavigationRow(title: "Devices", subtitle: .none, icon: Icon(image: #imageLiteral(resourceName: "device")), action: weakify(self, type(of: self).showAddDevice)),
                 
                 NavigationRow(title: "Edit Profile", subtitle: .none, icon: Icon(image: #imageLiteral(resourceName: "profile")), action: weakify(self, type(of: self).showDetail)),
                 
@@ -81,7 +86,7 @@ class SettingViewController: QuickTableViewController {
     private func didToggleSwitch(_ sender: Row) {
         
         // Turn touch id on.
-        
+
         if let row = sender as? SwitchRow {
             let state = "\(row.title) = \(row.switchValue)"
             print(state)
@@ -95,11 +100,8 @@ class SettingViewController: QuickTableViewController {
                 self.dismiss(animated: true, completion: nil)
             }
         }
-        
-       // let vc = self.storyboard?.instantiateViewController(withIdentifier: "login") as! loginVC
+     // let vc = self.storyboard?.instantiateViewController(withIdentifier: "login") as! loginVC
     //    self.present(vc, animated: false, completion: nil)
-        
-        
     }
     
     private func showDetail(_ sender: Row) {
@@ -109,7 +111,38 @@ class SettingViewController: QuickTableViewController {
         controller.title = detail
         navigationController?.pushViewController(controller, animated: true)
     }
+    
+    
+    private func showAddDevice(_ sender: Row) {
+        
+        let detail = "\(sender.title)\(sender.subtitle?.text ?? "")"
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "device") as! deviceViewController
+        controller.view.backgroundColor = UIColor.gray
+        controller.title = detail
+        navigationController?.pushViewController(controller, animated: true)
+        
+    }
+    
+    // messages page
+    private func showMessages(_ sender: Row) {
+        let detail = "\(sender.title)\(sender.subtitle?.text ?? "")"
+        let controller = UIViewController()
+        controller.view.backgroundColor = UIColor.white
+        controller.title = detail
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    //shop
+    private func showShop(_ sender: Row) {
+        
+        let svc = SFSafariViewController(url: NSURL(string: "https://heatmarketplace.com/products/")! as URL )
+        present(svc, animated: true, completion: nil)
 
+    }
+
+    
+    
+    
     
 }
 
