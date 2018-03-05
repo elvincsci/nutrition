@@ -36,6 +36,9 @@ class deviceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tabBarController?.tabBar.isHidden = true
+        tabBarController?.tabBar.isHidden = true
+
         // Do any additional setup after loading the view.
     }
 
@@ -69,6 +72,7 @@ class deviceViewController: UIViewController {
                         
                         let courses = try JSONDecoder().decode(Course.self, from: data)
                         
+                        
                         DispatchQueue.main.async {
                             self.labelNokia.text = courses.Url_Link
                             urlLink = courses.Url_Link
@@ -96,22 +100,22 @@ class deviceViewController: UIViewController {
 
             let authURL = urlLink!
             
+            //let authURL = "http://0.0.0.0:5000/get-cookie/user?callbackUrl=" + callbackUrl
             //Initialize auth session
             self.authSession = SFAuthenticationSession(url: URL(string: authURL)!, callbackURLScheme: callbackUrl, completionHandler: { (callBack:URL?, error:Error? ) in
-             
+            
                 guard error == nil, let successURL = callBack else {
                     print(error!)
-                    
-                   // self.loginStatus.text = "Error logging in with Instagram"
+                    //self.cookieLabel.text = "Error retrieving cookie"
                     return
                 }
-                
-                print(successURL.absoluteString)
-                // get token from query string
-                // use token fetch username from Instagram and set in UI
-                
-                
+                print(successURL.absoluteURL)
+             
+               // let user = getQueryStringParameter(url: (successURL.absoluteString), param: "user")
+               // self.cookieLabel.text = (user == "None") ? "user cookie not set" : "User: " + user!
             })
+            
+            self.authSession?.start()
             
         }
         

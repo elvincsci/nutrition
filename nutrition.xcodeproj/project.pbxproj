@@ -11,6 +11,9 @@
 		0CEC92B30B294B282046E6E2 /* Pods_nutrition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB98251982A3B7680DF51CDD /* Pods_nutrition.framework */; };
 		5E88D381388F68C8D95ABAAA /* Pods_nutritionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B355F2FCF4F241D9CC9826F7 /* Pods_nutritionUITests.framework */; };
 		E51FF40D204865890085F83F /* deviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51FF40C204865890085F83F /* deviceViewController.swift */; };
+		E530FE94204C7FDF0089E0A8 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530FE93204C7FDF0089E0A8 /* Message.swift */; };
+		E530FE98204C80490089E0A8 /* MessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530FE97204C80490089E0A8 /* MessagesVC.swift */; };
+		E530FE9A204CEE300089E0A8 /* ChatCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530FE99204CEE300089E0A8 /* ChatCells.swift */; };
 		E557584D2019472600A2BC4A /* NewsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E557584C2019472600A2BC4A /* NewsListTableViewCell.swift */; };
 		E557584F201966A400A2BC4A /* dashboardCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E557584E201966A400A2BC4A /* dashboardCellTableViewCell.swift */; };
 		E56FA25F1FCCA08200B885A8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E56FA25E1FCCA08200B885A8 /* GoogleService-Info.plist */; };
@@ -60,6 +63,9 @@
 		D1F5AECBAD9CC726E7D446E2 /* Pods-nutritionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nutritionTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-nutritionTests/Pods-nutritionTests.release.xcconfig"; sourceTree = "<group>"; };
 		DB98251982A3B7680DF51CDD /* Pods_nutrition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nutrition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E51FF40C204865890085F83F /* deviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deviceViewController.swift; sourceTree = "<group>"; };
+		E530FE93204C7FDF0089E0A8 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		E530FE97204C80490089E0A8 /* MessagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesVC.swift; sourceTree = "<group>"; };
+		E530FE99204CEE300089E0A8 /* ChatCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCells.swift; sourceTree = "<group>"; };
 		E557584C2019472600A2BC4A /* NewsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListTableViewCell.swift; sourceTree = "<group>"; };
 		E557584E201966A400A2BC4A /* dashboardCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dashboardCellTableViewCell.swift; sourceTree = "<group>"; };
 		E56FA25E1FCCA08200B885A8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -219,6 +225,8 @@
 				E58B8A391FCB514000045045 /* TabController.swift */,
 				E5F5A7A71FC9CFF800FCD6D9 /* landingVC.swift */,
 				E51FF40C204865890085F83F /* deviceViewController.swift */,
+				E530FE97204C80490089E0A8 /* MessagesVC.swift */,
+				E530FE99204CEE300089E0A8 /* ChatCells.swift */,
 				E5EF79001FCB854B003302C2 /* SettingViewController.swift */,
 				E5EF79021FCB8827003302C2 /* HomeViewController.swift */,
 				E557584C2019472600A2BC4A /* NewsListTableViewCell.swift */,
@@ -242,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				E5F5A7DA1FCA5C3800FCD6D9 /* User.swift */,
+				E530FE93204C7FDF0089E0A8 /* Message.swift */,
 				E56FA2691FCFCADD00B885A8 /* Video.swift */,
 			);
 			path = model;
@@ -557,8 +566,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E557584F201966A400A2BC4A /* dashboardCellTableViewCell.swift in Sources */,
+				E530FE9A204CEE300089E0A8 /* ChatCells.swift in Sources */,
 				E5EF79031FCB8827003302C2 /* HomeViewController.swift in Sources */,
 				E5F5A7DB1FCA5C3800FCD6D9 /* User.swift in Sources */,
+				E530FE98204C80490089E0A8 /* MessagesVC.swift in Sources */,
 				E5F5A7A81FC9CFF800FCD6D9 /* landingVC.swift in Sources */,
 				E5E01E361FD1E45500B6A74F /* dashboardVC.swift in Sources */,
 				E5F5A7D61FC9E31600FCD6D9 /* loginVC.swift in Sources */,
@@ -569,6 +580,7 @@
 				E58B8A3A1FCB514000045045 /* TabController.swift in Sources */,
 				E5EF79011FCB854B003302C2 /* SettingViewController.swift in Sources */,
 				E5EF79051FCB8A1C003302C2 /* MainViewController.swift in Sources */,
+				E530FE94204C7FDF0089E0A8 /* Message.swift in Sources */,
 				E51FF40D204865890085F83F /* deviceViewController.swift in Sources */,
 				E557584D2019472600A2BC4A /* NewsListTableViewCell.swift in Sources */,
 			);

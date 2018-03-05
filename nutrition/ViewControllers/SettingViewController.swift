@@ -125,11 +125,16 @@ class SettingViewController: QuickTableViewController {
     
     // messages page
     private func showMessages(_ sender: Row) {
+        
         let detail = "\(sender.title)\(sender.subtitle?.text ?? "")"
-        let controller = UIViewController()
-        controller.view.backgroundColor = UIColor.white
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "message") as! MessagesVC
+        controller.view.backgroundColor = UIColor.gray
         controller.title = detail
+        controller.tabBarController?.tabBar.isHidden = true
+        
         navigationController?.pushViewController(controller, animated: true)
+    
+    
     }
     
     //shop
