@@ -13,11 +13,6 @@ class MessagesVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("jerer")
-        
-        self.extendedLayoutIncludesOpaqueBars = true
-       // self.tabBarController?.tabBar.isHidden = true
-
         // Do any additional setup after loading the view.
     }
 

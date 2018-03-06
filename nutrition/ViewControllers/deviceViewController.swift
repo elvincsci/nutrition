@@ -20,12 +20,18 @@ struct Course: Decodable {
 //    let id: Int?
     let Status_Message: String?
     let Url_Link: String?
-    
 }
 
-
+func getQueryStringParameter(url: String, param: String) -> String? {
+    guard let url = URLComponents(string: url) else { return nil }
+    return url.queryItems?.first(where: { $0.name == param })?.value
+}
 
 class deviceViewController: UIViewController {
+
+    
+
+    var safariVC: SFSafariViewController?
 
     @IBOutlet var labelNokia: UILabel!
     
@@ -36,12 +42,10 @@ class deviceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tabBarController?.tabBar.isHidden = true
-        tabBarController?.tabBar.isHidden = true
-
         // Do any additional setup after loading the view.
     }
-
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -92,56 +96,40 @@ class deviceViewController: UIViewController {
         }else{
             
          //   print(urlLink!)
+    
         
-          //  let svc = SFSafariViewController(url: NSURL(string: urlLink!)! as URL )
-          //  present(svc, animated: true, completion: nil)
-            
-            let callbackUrl  = "nutrition://"
-
+            let callbackUrl  = "nutritions://"
             let authURL = urlLink!
-            
+
             //let authURL = "http://0.0.0.0:5000/get-cookie/user?callbackUrl=" + callbackUrl
             //Initialize auth session
             self.authSession = SFAuthenticationSession(url: URL(string: authURL)!, callbackURLScheme: callbackUrl, completionHandler: { (callBack:URL?, error:Error? ) in
-            
+
+
                 guard error == nil, let successURL = callBack else {
                     print(error!)
                     //self.cookieLabel.text = "Error retrieving cookie"
                     return
                 }
                 print(successURL.absoluteURL)
-             
-               // let user = getQueryStringParameter(url: (successURL.absoluteString), param: "user")
-               // self.cookieLabel.text = (user == "None") ? "user cookie not set" : "User: " + user!
+
+                let userids = getQueryStringParameter(url: (successURL.absoluteString), param: "userid")
+                let oauth_verifier = getQueryStringParameter(url: (successURL.absoluteString), param: "oauth_verifier")
+                //let users = getQueryStringParameter(url: (successURL.absoluteString), param: "userid")
+
+                print(userids!)
+                print(oauth_verifier!)
+
+                // self.cookieLabel.text = (user == "None") ? "user cookie not set" : "User: " + user!
             })
-            
+
             self.authSession?.start()
+
+
             
         }
         
-       // print((sender as AnyObject).title(for: .normal)!)
-        
-      //  button.title
-        
-        //button.setTitle("Your text", for: .normal)
-        
 
-        //print ((sender as AnyObject).text)
-
-
-
-        
-        
-       // let te = Course.self
-       // let aMirror = Mirror(reflecting: Course)
-
-      //  var x = Course()
-
-        
-       // print(Status_Message)
-
-       // labelNokia.text = urlLink as Any as? String
-    
     }
 
     
@@ -162,3 +150,4 @@ class deviceViewController: UIViewController {
     */
 
 }
+
