@@ -8,7 +8,6 @@
 
 import UIKit
 import Firebase
-import SafariServices
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -47,40 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     
-    func safariViewController(_ controller: SFSafariViewController, initialLoadDidRedirectTo URL: URL)
-    {
-        
-        print(URL)
- 
-    }
-    
- 
-    
-    
-    
-//    private func application(app: UIApplication, openURL url: URL, options: [String : AnyObject]) -> Bool {
-//
-//        print("app: \(app)")
-//        // print OAuth response URL
-//        print("url: \(url)")
-//        print("options: \(options)")
-//
-//        if let sourceApplication = options["UIApplicationOpenURLOptionsSourceApplicationKey"] {
-//            if (String(describing: sourceApplication) == "csci.nutrition") {
-//                NotificationCenter.default.post(name: NSNotification.Name(rawValue: kSafariViewControllerCloseNotification), object: url)
-//
-//
-//                print(url.absoluteString)
-//                    print("herwerwrtertryrtytry")
-//
-//                return true
-//            }
-//        }
-//        return true
-//    }
 
-    
-    
     
 }
 

@@ -523,6 +523,14 @@
                                     <action selector="addButton:" destination="nFX-EG-jF1" eventType="touchUpInside" id="5jK-Bj-nC1"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04k-0N-KcO">
+                                <rect key="frame" x="64" y="556" width="246" height="91"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sync Data"/>
+                                <connections>
+                                    <action selector="syncData:" destination="nFX-EG-jF1" eventType="touchUpInside" id="OjX-Nf-24I"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="Cox-Bt-LoV" firstAttribute="leading" secondItem="KoE-E8-dve" secondAttribute="leading" id="9Pb-RU-u16"/>
@@ -537,6 +545,7 @@
                     </view>
                     <connections>
                         <outlet property="labelNokia" destination="Cox-Bt-LoV" id="U8v-P3-J5m"/>
+                        <outlet property="synchda" destination="04k-0N-KcO" id="cuh-Y3-MOz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rii-Te-b4D" userLabel="First Responder" sceneMemberID="firstResponder"/>
