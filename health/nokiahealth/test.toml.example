@@ -1,0 +1,8 @@
+# The developer authentication information.
+devToken = "cb2962c175cd3bc6095e5bb091d5ef6f65e1c079b9b3dffc93794c8e2d2e1"
+devSecret = "854b19b04fd83e7b65b34fb77eec84c9bf34c1c0ed0813153d17119f"
+
+# The ID of the user requests will be made for.
+userID = 14619007
+userToken = "e11e6efb02b55f12861330c7476cc3ecf11f78013583c5f3e78d95751953"
+userSecret = "845eb8021f9cd4d209dc33db15ce5ce31590829bcb309621f14083"
