@@ -15,6 +15,7 @@ import Firebase
 var urlLink : String?
 var TokenStr : String?
 var SecretStr : String?
+var NokiaSecretStr : String?
 
 
 struct userdata: Decodable {
@@ -26,6 +27,19 @@ struct Course: Decodable {
     let Status_Message: String?
     let Url_Link: String?
 }
+
+
+
+struct Weight_Json: Decodable {
+    let Status_message: String?
+    let Weight_Data: [Weight_Data]
+}
+
+struct Weight_Data: Decodable {
+    let Weight_date: String?
+    let Weight_kg: Float64?
+}
+
 
 func getQueryStringParameter(url: String, param: String) -> String? {
     guard let url = URLComponents(string: url) else { return nil }
@@ -61,14 +75,86 @@ class deviceViewController: UIViewController {
     @IBAction func syncData(_ sender: Any) {
         
         
-        
-        
+        let userID = Auth.auth().currentUser?.uid
+        ref.child("users").child(userID!).child("Nokia credentials").observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            let value = snapshot.value as? NSDictionary
+            let NokiaSecretStr = value?["NokiaSecretStr"] as? String ?? ""
+            let NokiaTokenStr = value?["NokiaTokenStr"] as? String ?? ""
+            let NokiaUserID = value?["NokiaUserID"] as? String ?? ""
 
-        
-        
-    }
+          //  let user = User(username: username)
+            
+            //print("",NokiaSecretStr)
+            ///print("",NokiaTokenStr)
+            //print("",NokiaUserID)
     
+            let jsonUrlString = "http://localhost:8080/getweight" + "?SecretStr=" + NokiaSecretStr + "&TokenStr=" + NokiaTokenStr + "&UserID=" + NokiaUserID
+            
+            
+            print(jsonUrlString)
+            
+            guard let url = URL(string: jsonUrlString) else { return }
+
+            URLSession.shared.dataTask(with: url) { (data, response, err) in
+
+                guard let data = data else { return }
+
+
+                if(err != nil){
+                    print("error")
+                }else{
+
+                    do {
+
+                        //let courses = try JSONDecoder().decode(Course.self, from: data)
+                        let animeJsonStuff =  try JSONDecoder().decode(Weight_Json.self, from: data)
+
+                        print("-------- ---- ", animeJsonStuff.Status_message!)
+                        
+                        //print("-------- ---- ",animeJsonStuff.Weight_Data[1].Weight_date!)
+
     
+                        DispatchQueue.main.async {
+                            
+                            for jsonMedia in animeJsonStuff.Weight_Data {
+                                
+                               // print("-------- ---- ",jsonMedia.Weight_date!)
+                                
+                                self.ref = Database.database().reference()
+
+                                let uid = Auth.auth().currentUser?.uid
+                                
+                                let Nokiacredentials = self.ref.child("users").child(uid!).child("Userweight").childByAutoId()
+
+                                //let Nokiacredentials = self.ref.child("Userweight")
+
+                                let NokiaSecretStr = Nokiacredentials.child("UserDate")
+                                NokiaSecretStr.setValue(jsonMedia.Weight_date!)
+
+                                let NokiaTokenStr = Nokiacredentials.child("UserWeight")
+                                NokiaTokenStr.setValue(jsonMedia.Weight_kg)
+                                
+                                
+                            }
+                        }
+
+                    } catch let jsonErr {
+                        print("Error serializing json:", jsonErr)
+                    }
+
+                }
+
+                }.resume()
+
+
+            
+            // ...
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+        
+}
     
     
     @IBAction func addButton(_ sender: Any) {
@@ -115,26 +201,19 @@ class deviceViewController: UIViewController {
             
         }else{
             
-         //   print(urlLink!)
-    
         
             let callbackUrl  = "nutritions://"
             let authURL = urlLink!
-            
 
-            //let authURL = "http://0.0.0.0:5000/get-cookie/user?callbackUrl=" + callbackUrl
             //Initialize auth session
             self.authSession = SFAuthenticationSession(url: URL(string: authURL)!, callbackURLScheme: callbackUrl, completionHandler: { (callBack:URL?, error:Error? ) in
-
 
                 guard error == nil, let successURL = callBack else {
                     print(error!)
                     //self.cookieLabel.text = "Error retrieving cookie"
                     return
                 }
-               
-                //print(successURL.absoluteURL)
-
+        
                 let userids = getQueryStringParameter(url: (successURL.absoluteString), param: "userid")
                 let oauth_verifier = getQueryStringParameter(url: (successURL.absoluteString), param: "oauth_verifier")
                 
@@ -159,10 +238,6 @@ class deviceViewController: UIViewController {
                                         
                                             SecretStr = user_data.SecretStr
                                             TokenStr = user_data.TokenStr
-                                            
-                                            //add userid and secret string to database
-                                            
-                                            //let values = ["UserID": userids, "SecretStr": SecretStr, "TokenStr": TokenStr]
                                             
                                             self.ref = Database.database().reference()
                                             

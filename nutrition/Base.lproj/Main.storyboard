@@ -445,7 +445,7 @@
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="sAi-Q2-GwP" id="bF8-FL-9CY"/>
-                                    <outlet property="delegate" destination="sAi-Q2-GwP" id="300-tN-9TV"/>
+                                    <outlet property="delegate" destination="z0O-32-Y5T" id="uqA-Ju-Je6"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -610,9 +610,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="message" destination="jO6-Mq-vJh" id="of9-iL-8Iy"/>
-                                            <outlet property="messageBackground" destination="UP5-7Z-KNq" id="5yT-Yl-IxT"/>
-                                            <outlet property="profilePic" destination="CLy-gG-rOT" id="kcF-n0-5t1"/>
+                                            <outlet property="message" destination="jO6-Mq-vJh" id="Ve4-wK-eb2"/>
+                                            <outlet property="messageBackground" destination="UP5-7Z-KNq" id="afT-Bo-tX2"/>
+                                            <outlet property="profilePic" destination="CLy-gG-rOT" id="JM9-SI-iHC"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Receiver" id="s6F-WP-4NV" customClass="ReceiverCell" customModule="nutrition" customModuleProvider="target">
@@ -652,12 +652,16 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="message" destination="GUo-D4-7dN" id="vD9-kv-5Wo"/>
-                                            <outlet property="messageBackground" destination="Bkm-ym-biO" id="4CE-LF-rpo"/>
+                                            <outlet property="message" destination="GUo-D4-7dN" id="aqj-ez-pna"/>
+                                            <outlet property="messageBackground" destination="Bkm-ym-biO" id="rN1-93-cD1"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="8dd-DV-Iww" id="qDJ-pJ-So3"/>
+                                    <outlet property="delegate" destination="8dd-DV-Iww" id="1md-cW-x9g"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -669,6 +673,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="l5y-8N-jJZ"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="RPA-UT-ReS" id="JCV-UU-4Zz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9tN-A6-VQP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -56,7 +56,7 @@ enum ShowExtraView {
 enum MessageType {
     case photo
     case text
-    case location
+ //   case location
 }
 
 enum MessageOwner {

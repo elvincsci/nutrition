@@ -6,8 +6,76 @@
 //  Copyright © 2018 elvin. All rights reserved.
 //
 
+import Foundation
 import UIKit
+import Firebase
 
-class Message: NSObject {
+class Message {
 
+    //MARK: Properties
+    var owner: MessageOwner
+    var type: MessageType
+    var content: Any
+    var timestamp: Int
+    var isRead: Bool
+    var image: UIImage?
+    private var toID: String?
+    private var fromID: String?
+    
+    
+    class func downloadAllMessages(forUserID: String, completion: @escaping (Message) -> Swift.Void) {
+        
+
+        
+        if let currentUserID = Auth.auth().currentUser?.uid {
+                    
+                    Database.database().reference().child("conversations").child(forUserID).observe(.childAdded, with: { (snap) in
+                        if snap.exists() {
+                            let receivedMessage = snap.value as! [String: Any]
+                            let messageType = receivedMessage["type"] as! String
+                            var type = MessageType.text
+                            switch messageType {
+                            case "photo":
+                                type = .photo
+                            default: break
+                            }
+                            let content = receivedMessage["content"] as! String
+
+                            let fromID = receivedMessage["fromID"] as! String
+                            let timestamp = receivedMessage["timestamp"] as! Int
+                            if fromID == currentUserID {
+                                let message = Message.init(type: type, content: content, owner: .receiver, timestamp: timestamp, isRead: true)
+                                completion(message)
+                            } else {
+                                let message = Message.init(type: type, content: content, owner: .sender, timestamp: timestamp, isRead: true)
+                                completion(message)
+                            }
+                        }
+                    })
+        }
+    }
+    
+    
+    func downloadImage(indexpathRow: Int, completion: @escaping (Bool, Int) -> Swift.Void)  {
+        if self.type == .photo {
+            let imageLink = self.content as! String
+            let imageURL = URL.init(string: imageLink)
+            URLSession.shared.dataTask(with: imageURL!, completionHandler: { (data, response, error) in
+                if error == nil {
+                    self.image = UIImage.init(data: data!)
+                    completion(true, indexpathRow)
+                }
+            }).resume()
+        }
+    }
+    
+    init(type: MessageType, content: Any, owner: MessageOwner, timestamp: Int, isRead: Bool) {
+        self.type = type
+        self.content = content
+        self.owner = owner
+        self.timestamp = timestamp
+        self.isRead = isRead
+    }
+    
+    
 }
