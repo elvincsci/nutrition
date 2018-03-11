@@ -54,14 +54,9 @@ class ReceiverCell: UITableViewCell {
         super.awakeFromNib()
         self.selectionStyle = .none
         self.message.textContainerInset = UIEdgeInsetsMake(5, 5, 5, 5)
-        self.messageBackground.layer.cornerRadius = 15
+        self.messageBackground.layer.cornerRadius = 5
         self.messageBackground.clipsToBounds = true
     }
-    
-}
-
-class ConversationsTBCell: UITableViewCell {
-    
     
 }
 

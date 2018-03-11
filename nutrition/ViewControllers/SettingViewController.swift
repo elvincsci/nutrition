@@ -117,7 +117,7 @@ class SettingViewController: QuickTableViewController {
         
         let detail = "\(sender.title)\(sender.subtitle?.text ?? "")"
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "device") as! deviceViewController
-        controller.view.backgroundColor = UIColor.gray
+        controller.view.backgroundColor = UIColor.white
         controller.title = detail
         navigationController?.pushViewController(controller, animated: true)
         
