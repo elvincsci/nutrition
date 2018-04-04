@@ -10,14 +10,41 @@ import UIKit
 
 class dashboardVC: UINavigationController {
     
-    
+    @IBOutlet weak var waterLabel: UILabel!
+
+    @IBOutlet weak var waterPic: RoundedImageView!
     @IBOutlet var contactsView: UIView!
     let darkView = UIView.init()
+    @IBOutlet weak var weightLabel: UILabel!
     var topAnchorContraint: NSLayoutConstraint!
+    @IBOutlet weak var foodLabel: UILabel!
+    
+    @IBOutlet weak var weightPic: RoundedImageView!
+    @IBOutlet weak var exercisePic: RoundedImageView!
+    @IBOutlet weak var exerciseLabel: UILabel!
+    @IBOutlet weak var foodPic: RoundedImageView!
+    
 
-    @IBOutlet var collectionView: UICollectionView!
+    
     
     func customization() {
+        
+        //Water image
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(addWaterTapped(tapGestureRecognizer:)))
+        self.waterPic.isUserInteractionEnabled = true
+        self.waterPic.addGestureRecognizer(tapGestureRecognizer)
+        
+        let tapGestureRecognizer2 = UITapGestureRecognizer(target: self, action: #selector(addWeightTapped(tapGestureRecognizer:)))
+        self.weightPic.isUserInteractionEnabled = true
+        self.weightPic.addGestureRecognizer(tapGestureRecognizer2)
+        
+        let tapGestureRecognizer3 = UITapGestureRecognizer(target: self, action: #selector(addExerciseTapped(tapGestureRecognizer:)))
+        self.exercisePic.isUserInteractionEnabled = true
+        self.exercisePic.addGestureRecognizer(tapGestureRecognizer3)
+        
+        let tapGestureRecognizer4 = UITapGestureRecognizer(target: self, action: #selector(addFoodTapped(tapGestureRecognizer:)))
+        self.foodPic.isUserInteractionEnabled = true
+        self.foodPic.addGestureRecognizer(tapGestureRecognizer4)
         
         //DarkView customization
         self.view.addSubview(self.darkView)
@@ -123,6 +150,52 @@ class dashboardVC: UINavigationController {
     }
     
 
+    
+    @objc func addWaterTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        self.dismissExtraViews()
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "dailyActivities") as! waterViewController
+        self.show(vc, sender: self)
+
+    }
+    
+
+    @objc func addFoodTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        // let tappedImage = tapGestureRecognizer.view as! UIImageView
+        // Your action
+        
+        self.dismissExtraViews()
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "addFood") as! FoodViewController
+        vc.view.backgroundColor = UIColor.white
+        //vc.title = "Devices"
+        self.show(vc, sender: nil)
+    }
+    
+    @objc func addExerciseTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        // let tappedImage = tapGestureRecognizer.view as! UIImageView
+        
+        self.dismissExtraViews()
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "addExercise") as! ExerciseViewController
+        vc.view.backgroundColor = UIColor.white
+        //vc.title = "Devices"
+        self.show(vc, sender: nil)
+        
+        // Your action
+    }
+    
+    
+    @objc func addWeightTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        self.dismissExtraViews()
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "device") as! deviceViewController
+        vc.view.backgroundColor = UIColor.white
+        vc.title = "Devices"
+        self.show(vc, sender: nil)
+
+    }
+    
     /*
     // MARK: - Navigation
 

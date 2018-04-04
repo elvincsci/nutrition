@@ -17,39 +17,33 @@ class Message {
     var type: MessageType
     var content: Any
     var timestamp: Int
-    var isRead: Bool
     var image: UIImage?
-    private var toID: String?
-    private var fromID: String?
     
     
     class func downloadAllMessages(forUserID: String, completion: @escaping (Message) -> Swift.Void) {
         
 
         
-        if let currentUserID = Auth.auth().currentUser?.uid {
+        if (Auth.auth().currentUser?.uid) != nil {
                     
-                    Database.database().reference().child("conversations").child(forUserID).observe(.childAdded, with: { (snap) in
-                        if snap.exists() {
-                            let receivedMessage = snap.value as! [String: Any]
-                            let messageType = receivedMessage["type"] as! String
-                            var type = MessageType.text
-                            switch messageType {
-                            case "photo":
-                                type = .photo
-                            default: break
-                            }
-                            let content = receivedMessage["content"] as! String
+            Database.database().reference().child("conversations").child(forUserID).observe(.childAdded, with: { (snap) in
+                    if snap.exists() {
+                        let receivedMessage = snap.value as! [String: Any]
+                        let messageType = receivedMessage["type"] as! String
+                        var type = MessageType.text
+                        switch messageType {
+                        case "photo":
+                            type = .photo
+                        default: break
+                        }
+                        let content = receivedMessage["content"] as! String
 
-                            let fromID = receivedMessage["fromID"] as! String
-                            let timestamp = receivedMessage["timestamp"] as! Int
-                            if fromID == currentUserID {
-                                let message = Message.init(type: type, content: content, owner: .receiver, timestamp: timestamp, isRead: true)
-                                completion(message)
-                            } else {
-                                let message = Message.init(type: type, content: content, owner: .sender, timestamp: timestamp, isRead: true)
-                                completion(message)
-                            }
+                        let timestamp = receivedMessage["timestamp"] as! Int
+                        
+                        let message = Message.init(type: type, content: content, owner: .receiver, timestamp: timestamp, isRead: true)
+                        completion(message)
+                                
+
                         }
                     })
         }
@@ -74,7 +68,6 @@ class Message {
         self.content = content
         self.owner = owner
         self.timestamp = timestamp
-        self.isRead = isRead
     }
     
     

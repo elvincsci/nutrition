@@ -25,7 +25,7 @@ UINavigationControllerDelegate{
     func customization() {
         //self.imagePicker.delegate = self
         self.tableView.estimatedRowHeight = self.barHeight
-        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.rowHeight = UITableViewAutomaticDimension + 70
         self.tableView.contentInset.bottom = self.barHeight
         self.tableView.scrollIndicatorInsets.bottom = self.barHeight
         self.navigationItem.title = currentUser.displayName
@@ -45,7 +45,7 @@ UINavigationControllerDelegate{
         //currentUser =  Auth.auth().currentUser!
         Message.downloadAllMessages(forUserID: self.currentUser.uid, completion: {[weak weakSelf = self] (message) in
             weakSelf?.items.append(message)
-            print(message.content,"     --------------------------------------")
+
             weakSelf?.items.sort{ $0.timestamp < $1.timestamp }
             DispatchQueue.main.async {
                 if let state = weakSelf?.items.isEmpty, state == false {
@@ -54,7 +54,6 @@ UINavigationControllerDelegate{
                 }
             }
         })
-       // Message.markMessagesRead(forUserID: self.currentUser!.id)
     }
     
     
@@ -81,6 +80,15 @@ UINavigationControllerDelegate{
             switch self.items[indexPath.row].type {
             case .text:
                 cell.message.text = self.items[indexPath.row].content as! String
+
+                let date = NSDate(timeIntervalSince1970: TimeInterval(self.items[indexPath.row].timestamp))
+                
+                let dayTimePeriodFormatter = DateFormatter()
+                dayTimePeriodFormatter.dateFormat = "MMM dd YYYY"
+                
+                let dateString = dayTimePeriodFormatter.string(from: date as Date)
+
+                cell.messageDate.text = dateString
             case .photo:
                 if let image = self.items[indexPath.row].image {
                     cell.messageBackground.image = image
@@ -97,6 +105,7 @@ UINavigationControllerDelegate{
                 }
             }
             return cell
+            
         case .sender:
             let cell = tableView.dequeueReusableCell(withIdentifier: "Sender", for: indexPath) as! SenderCell
             cell.clearCellData()

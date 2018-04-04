@@ -43,8 +43,10 @@ class ReceiverCell: UITableViewCell {
 
     @IBOutlet var messageBackground: UIImageView!
     @IBOutlet var message: UITextView!
+    @IBOutlet weak var messageDate: UILabel!
     
     func clearCellData()  {
+        //self.messageDate.text = nil
         self.message.text = nil
         self.message.isHidden = false
         self.messageBackground.image = nil
@@ -54,7 +56,7 @@ class ReceiverCell: UITableViewCell {
         super.awakeFromNib()
         self.selectionStyle = .none
         self.message.textContainerInset = UIEdgeInsetsMake(5, 5, 5, 5)
-        self.messageBackground.layer.cornerRadius = 5
+        // self.messageBackground.layer.cornerRadius = 5
         self.messageBackground.clipsToBounds = true
     }
     

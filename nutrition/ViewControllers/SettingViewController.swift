@@ -38,7 +38,7 @@ class SettingViewController: QuickTableViewController {
                 
                 NavigationRow(title: "Devices", subtitle: .none, icon: Icon(image: #imageLiteral(resourceName: "device")), action: weakify(self, type(of: self).showAddDevice)),
                 
-                NavigationRow(title: "Edit Profile", subtitle: .none, icon: Icon(image: #imageLiteral(resourceName: "profile")), action: weakify(self, type(of: self).showDetail)),
+                NavigationRow(title: "My Profile", subtitle: .none, icon: Icon(image: #imageLiteral(resourceName: "profile")), action: weakify(self, type(of: self).showDetail)),
                 
                 ]),
 
@@ -52,9 +52,6 @@ class SettingViewController: QuickTableViewController {
                 
                 ]),
 
-            Section(title: "Reminder", rows: [
-                SwitchRow<SwitchCell>(title: "Checkup Reminder", switchValue: false, icon: Icon(image: time), action: weakify(self, type(of: self).didToggleSwitch))
-                ]),
             
             Section(title: "", rows: [
                 
@@ -119,6 +116,7 @@ class SettingViewController: QuickTableViewController {
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "device") as! deviceViewController
         controller.view.backgroundColor = UIColor.white
         controller.title = detail
+        
         navigationController?.pushViewController(controller, animated: true)
         
     }

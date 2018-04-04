@@ -14,12 +14,17 @@
 		E530FE94204C7FDF0089E0A8 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530FE93204C7FDF0089E0A8 /* Message.swift */; };
 		E530FE98204C80490089E0A8 /* MessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530FE97204C80490089E0A8 /* MessagesVC.swift */; };
 		E530FE9A204CEE300089E0A8 /* ChatCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530FE99204CEE300089E0A8 /* ChatCells.swift */; };
+		E54F7482207500F200234F1D /* waterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54F7481207500F200234F1D /* waterViewController.swift */; };
+		E54F7484207521EE00234F1D /* addViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54F7483207521EE00234F1D /* addViewController.swift */; };
 		E557584D2019472600A2BC4A /* NewsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E557584C2019472600A2BC4A /* NewsListTableViewCell.swift */; };
 		E557584F201966A400A2BC4A /* dashboardCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E557584E201966A400A2BC4A /* dashboardCellTableViewCell.swift */; };
 		E56FA25F1FCCA08200B885A8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E56FA25E1FCCA08200B885A8 /* GoogleService-Info.plist */; };
 		E56FA26A1FCFCADD00B885A8 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56FA2691FCFCADD00B885A8 /* Video.swift */; };
 		E56FA26D1FCFE28700B885A8 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56FA26C1FCFE28700B885A8 /* ApiService.swift */; };
 		E58B8A3A1FCB514000045045 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58B8A391FCB514000045045 /* TabController.swift */; };
+		E5B8907120752D6100CF2EC6 /* FoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8907020752D6100CF2EC6 /* FoodViewController.swift */; };
+		E5B8907320752D8000CF2EC6 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8907220752D8000CF2EC6 /* ExerciseViewController.swift */; };
+		E5B89075207530A800CF2EC6 /* WeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B89074207530A800CF2EC6 /* WeightViewController.swift */; };
 		E5E01E361FD1E45500B6A74F /* dashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E01E351FD1E45500B6A74F /* dashboardVC.swift */; };
 		E5E01E391FD2471500B6A74F /* Helper Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E01E381FD2471500B6A74F /* Helper Files.swift */; };
 		E5EF79011FCB854B003302C2 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EF79001FCB854B003302C2 /* SettingViewController.swift */; };
@@ -66,12 +71,17 @@
 		E530FE93204C7FDF0089E0A8 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		E530FE97204C80490089E0A8 /* MessagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesVC.swift; sourceTree = "<group>"; };
 		E530FE99204CEE300089E0A8 /* ChatCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCells.swift; sourceTree = "<group>"; };
+		E54F7481207500F200234F1D /* waterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = waterViewController.swift; sourceTree = "<group>"; };
+		E54F7483207521EE00234F1D /* addViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addViewController.swift; sourceTree = "<group>"; };
 		E557584C2019472600A2BC4A /* NewsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListTableViewCell.swift; sourceTree = "<group>"; };
 		E557584E201966A400A2BC4A /* dashboardCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dashboardCellTableViewCell.swift; sourceTree = "<group>"; };
 		E56FA25E1FCCA08200B885A8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E56FA2691FCFCADD00B885A8 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		E56FA26C1FCFE28700B885A8 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		E58B8A391FCB514000045045 /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
+		E5B8907020752D6100CF2EC6 /* FoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewController.swift; sourceTree = "<group>"; };
+		E5B8907220752D8000CF2EC6 /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
+		E5B89074207530A800CF2EC6 /* WeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightViewController.swift; sourceTree = "<group>"; };
 		E5E01E351FD1E45500B6A74F /* dashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dashboardVC.swift; sourceTree = "<group>"; };
 		E5E01E381FD2471500B6A74F /* Helper Files.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helper Files.swift"; sourceTree = "<group>"; };
 		E5EF79001FCB854B003302C2 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -225,8 +235,13 @@
 				E58B8A391FCB514000045045 /* TabController.swift */,
 				E5F5A7A71FC9CFF800FCD6D9 /* landingVC.swift */,
 				E51FF40C204865890085F83F /* deviceViewController.swift */,
+				E5B8907220752D8000CF2EC6 /* ExerciseViewController.swift */,
 				E530FE97204C80490089E0A8 /* MessagesVC.swift */,
+				E5B89074207530A800CF2EC6 /* WeightViewController.swift */,
 				E530FE99204CEE300089E0A8 /* ChatCells.swift */,
+				E5B8907020752D6100CF2EC6 /* FoodViewController.swift */,
+				E54F7483207521EE00234F1D /* addViewController.swift */,
+				E54F7481207500F200234F1D /* waterViewController.swift */,
 				E5EF79001FCB854B003302C2 /* SettingViewController.swift */,
 				E5EF79021FCB8827003302C2 /* HomeViewController.swift */,
 				E557584C2019472600A2BC4A /* NewsListTableViewCell.swift */,
@@ -566,11 +581,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				E557584F201966A400A2BC4A /* dashboardCellTableViewCell.swift in Sources */,
+				E5B8907120752D6100CF2EC6 /* FoodViewController.swift in Sources */,
+				E5B8907320752D8000CF2EC6 /* ExerciseViewController.swift in Sources */,
 				E530FE9A204CEE300089E0A8 /* ChatCells.swift in Sources */,
+				E5B89075207530A800CF2EC6 /* WeightViewController.swift in Sources */,
 				E5EF79031FCB8827003302C2 /* HomeViewController.swift in Sources */,
 				E5F5A7DB1FCA5C3800FCD6D9 /* User.swift in Sources */,
 				E530FE98204C80490089E0A8 /* MessagesVC.swift in Sources */,
 				E5F5A7A81FC9CFF800FCD6D9 /* landingVC.swift in Sources */,
+				E54F7482207500F200234F1D /* waterViewController.swift in Sources */,
 				E5E01E361FD1E45500B6A74F /* dashboardVC.swift in Sources */,
 				E5F5A7D61FC9E31600FCD6D9 /* loginVC.swift in Sources */,
 				E56FA26A1FCFCADD00B885A8 /* Video.swift in Sources */,
@@ -582,6 +601,7 @@
 				E5EF79051FCB8A1C003302C2 /* MainViewController.swift in Sources */,
 				E530FE94204C7FDF0089E0A8 /* Message.swift in Sources */,
 				E51FF40D204865890085F83F /* deviceViewController.swift in Sources */,
+				E54F7484207521EE00234F1D /* addViewController.swift in Sources */,
 				E557584D2019472600A2BC4A /* NewsListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
