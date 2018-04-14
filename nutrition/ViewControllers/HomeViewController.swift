@@ -12,8 +12,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     
+    @IBOutlet weak var tableView: UITableView!
     //@IBOutlet var tableView: UITableView!
     var videos = [Video]()
+    
     var lastContentOffset: CGFloat = 0.0
     
     
@@ -25,29 +27,55 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 //        self.tableView.estimatedRowHeight = 300
 //    }
 //
-    
-    //    func fetchData() {
-    //        Video.fetchVideos { [weak self] response in
-    //            guard let weakSelf = self else {
-    //                return
-    //            }
-    //            weakSelf.videos = response
-    //            //weakSelf.videos.shuffle()
-    //            weakSelf.tableView.reloadData()
-    //        }
-    //    }
+    func customization() {
+        self.tableView.contentInset = UIEdgeInsetsMake(50, 0, 30, 0)
+        self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(50, 0, 30, 0)
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 300
+    }
     
     
+    
+    func fetchData() {
+        
+        Video.downloadAllMessages(completion: {[weak weakSelf = self] (video) in
+            
+//            print("hererer")
+//            print(video.content)
+//            print(video.videoLink)
+            
+            weakSelf?.videos.append(video)
+            
+            weakSelf?.videos.sort{ $0.timestamp < $1.timestamp }
+            
+            DispatchQueue.main.async {
+                
+                if let state = weakSelf?.videos.isEmpty, state == false {
+                    
+                    weakSelf?.tableView.reloadData()
+
+                    
+                }
+            }
+        })
+    } 
+    
+
     //MARK: Delegates
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        //return 5
+        return self.videos.count
+
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "VideoCell") as! NewsListTableViewCell
-        //cell.set(video: self.videos[indexPath.row])
+        cell.set(video: self.videos[indexPath.row])
         return cell
     }
+    
+
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         NotificationCenter.default.post(name: NSNotification.Name("open"), object: nil)
@@ -71,12 +99,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         
         //self.customization()
-        //self.fetchData()
+        self.fetchData()
         
         // Do any additional setup after loading the view.
         // Do any additional setup after loading the view.
     }
-    
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -84,56 +112,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     
-    /*
-     // MARK: - Navigation
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
 
-
-//class NewsFeedCell: UITableViewCell {
-//
-//    @IBOutlet var videoThumbnail: UIImageView!
-//    @IBOutlet var titleLB: UILabel!
-//    @IBOutlet var descriptionLB: UILabel!
-//
-//    func set(video: Video)  {
-//        //self.videoThumbnail.image = video.thumbnail
-//        self.titleLB.text = video.title
-//        self.descriptionLB.text = "Hallo"
-//    }
-//
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//       // postTitle.sizeToFit()
-//    }
-//
-//    override func prepareForReuse() {
-//        super.prepareForReuse()
-//
-//        self.videoThumbnail.image = UIImage.init(named: "emptyTumbnail")
-//        self.titleLB.text = nil
-//        self.descriptionLB.text = nil
-//
-//    }
-//
-////    override func awakeFromNib() {
-////        super.awakeFromNib()
-////    }
-//
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//    }
-//
-//    
-//
-//}
-//
-//
-//
 

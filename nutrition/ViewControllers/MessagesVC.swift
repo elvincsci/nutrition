@@ -37,9 +37,7 @@ UINavigationControllerDelegate{
     }
     
     
-    
-    
-    
+
     func fetchData() {
         
         //currentUser =  Auth.auth().currentUser!
@@ -73,6 +71,7 @@ UINavigationControllerDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
         switch self.items[indexPath.row].owner {
+            
         case .receiver:
             let cell = tableView.dequeueReusableCell(withIdentifier: "Receiver", for: indexPath) as! ReceiverCell
             cell.clearCellData()
@@ -131,8 +130,6 @@ UINavigationControllerDelegate{
             }
             return cell
         }
-        
-        
         
     }
     

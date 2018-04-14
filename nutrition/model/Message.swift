@@ -21,9 +21,7 @@ class Message {
     
     
     class func downloadAllMessages(forUserID: String, completion: @escaping (Message) -> Swift.Void) {
-        
-
-        
+    
         if (Auth.auth().currentUser?.uid) != nil {
                     
             Database.database().reference().child("conversations").child(forUserID).observe(.childAdded, with: { (snap) in

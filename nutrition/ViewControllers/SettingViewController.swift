@@ -32,7 +32,7 @@ class SettingViewController: QuickTableViewController {
         
             Section(title: "Navigation", rows: [
                 
-                NavigationRow(title: "Shop Collections", subtitle: .none, icon: Icon(image: #imageLiteral(resourceName: "device")), action: weakify(self, type(of: self).showShop)),
+                NavigationRow(title: "Shop", subtitle: .none, icon: Icon(image: #imageLiteral(resourceName: "device")), action: weakify(self, type(of: self).showShop)),
                 
                 NavigationRow(title: "Messages", subtitle: .none, icon: Icon(image: #imageLiteral(resourceName: "device")), action: weakify(self, type(of: self).showMessages)),
                 

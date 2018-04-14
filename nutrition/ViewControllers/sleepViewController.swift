@@ -1,5 +1,4 @@
-//
-//  WeightViewController.swift
+//  sleepViewController.swift
 //  nutrition
 //
 //  Created by elvin on 4/4/18.
@@ -8,7 +7,7 @@
 
 import UIKit
 
-class WeightViewController: UIViewController {
+class sleepViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +19,7 @@ class WeightViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 
     /*
     // MARK: - Navigation

@@ -25,6 +25,7 @@
 		E5B8907120752D6100CF2EC6 /* FoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8907020752D6100CF2EC6 /* FoodViewController.swift */; };
 		E5B8907320752D8000CF2EC6 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8907220752D8000CF2EC6 /* ExerciseViewController.swift */; };
 		E5B89075207530A800CF2EC6 /* WeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B89074207530A800CF2EC6 /* WeightViewController.swift */; };
+		E5B8907720754C7600CF2EC6 /* sleepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8907620754C7600CF2EC6 /* sleepViewController.swift */; };
 		E5E01E361FD1E45500B6A74F /* dashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E01E351FD1E45500B6A74F /* dashboardVC.swift */; };
 		E5E01E391FD2471500B6A74F /* Helper Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E01E381FD2471500B6A74F /* Helper Files.swift */; };
 		E5EF79011FCB854B003302C2 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EF79001FCB854B003302C2 /* SettingViewController.swift */; };
@@ -82,6 +83,7 @@
 		E5B8907020752D6100CF2EC6 /* FoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewController.swift; sourceTree = "<group>"; };
 		E5B8907220752D8000CF2EC6 /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
 		E5B89074207530A800CF2EC6 /* WeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightViewController.swift; sourceTree = "<group>"; };
+		E5B8907620754C7600CF2EC6 /* sleepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sleepViewController.swift; sourceTree = "<group>"; };
 		E5E01E351FD1E45500B6A74F /* dashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dashboardVC.swift; sourceTree = "<group>"; };
 		E5E01E381FD2471500B6A74F /* Helper Files.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helper Files.swift"; sourceTree = "<group>"; };
 		E5EF79001FCB854B003302C2 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 			children = (
 				E58B8A391FCB514000045045 /* TabController.swift */,
 				E5F5A7A71FC9CFF800FCD6D9 /* landingVC.swift */,
+				E5B8907620754C7600CF2EC6 /* sleepViewController.swift */,
 				E51FF40C204865890085F83F /* deviceViewController.swift */,
 				E5B8907220752D8000CF2EC6 /* ExerciseViewController.swift */,
 				E530FE97204C80490089E0A8 /* MessagesVC.swift */,
@@ -600,6 +603,7 @@
 				E5EF79011FCB854B003302C2 /* SettingViewController.swift in Sources */,
 				E5EF79051FCB8A1C003302C2 /* MainViewController.swift in Sources */,
 				E530FE94204C7FDF0089E0A8 /* Message.swift in Sources */,
+				E5B8907720754C7600CF2EC6 /* sleepViewController.swift in Sources */,
 				E51FF40D204865890085F83F /* deviceViewController.swift in Sources */,
 				E54F7484207521EE00234F1D /* addViewController.swift in Sources */,
 				E557584D2019472600A2BC4A /* NewsListTableViewCell.swift in Sources */,

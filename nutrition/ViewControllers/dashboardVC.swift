@@ -12,6 +12,7 @@ class dashboardVC: UINavigationController {
     
     @IBOutlet weak var waterLabel: UILabel!
 
+    @IBOutlet weak var sleepPic: RoundedImageView!
     @IBOutlet weak var waterPic: RoundedImageView!
     @IBOutlet var contactsView: UIView!
     let darkView = UIView.init()
@@ -30,6 +31,8 @@ class dashboardVC: UINavigationController {
     func customization() {
         
         //Water image
+
+        
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(addWaterTapped(tapGestureRecognizer:)))
         self.waterPic.isUserInteractionEnabled = true
         self.waterPic.addGestureRecognizer(tapGestureRecognizer)
@@ -45,6 +48,10 @@ class dashboardVC: UINavigationController {
         let tapGestureRecognizer4 = UITapGestureRecognizer(target: self, action: #selector(addFoodTapped(tapGestureRecognizer:)))
         self.foodPic.isUserInteractionEnabled = true
         self.foodPic.addGestureRecognizer(tapGestureRecognizer4)
+        
+        let tapGestureRecognizer5 = UITapGestureRecognizer(target: self, action: #selector(addSleepTapped(tapGestureRecognizer:)))
+        self.sleepPic.isUserInteractionEnabled = true
+        self.sleepPic.addGestureRecognizer(tapGestureRecognizer5)
         
         //DarkView customization
         self.view.addSubview(self.darkView)
@@ -159,6 +166,18 @@ class dashboardVC: UINavigationController {
 
     }
     
+    
+    @objc func addSleepTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        // let tappedImage = tapGestureRecognizer.view as! UIImageView
+        // Your action
+        
+        self.dismissExtraViews()
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "addFood") as! FoodViewController
+        vc.view.backgroundColor = UIColor.white
+        //vc.title = "Devices"
+        self.show(vc, sender: nil)
+    }
 
     @objc func addFoodTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
@@ -188,8 +207,10 @@ class dashboardVC: UINavigationController {
     
     @objc func addWeightTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
+        
+        
         self.dismissExtraViews()
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "device") as! deviceViewController
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "device") as! WeightViewController
         vc.view.backgroundColor = UIColor.white
         vc.title = "Devices"
         self.show(vc, sender: nil)
