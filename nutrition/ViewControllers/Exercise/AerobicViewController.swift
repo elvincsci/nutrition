@@ -1,19 +1,17 @@
 //
-//  ExerciseViewController.swift
+//  AerobicViewController.swift
 //  nutrition
 //
-//  Created by elvin on 4/4/18.
+//  Created by elvin on 4/16/18.
 //  Copyright © 2018 elvin. All rights reserved.
 //
 
 import UIKit
 
-class ExerciseViewController: UIViewController {
+class AerobicViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.title = "Exercise"
 
         // Do any additional setup after loading the view.
     }

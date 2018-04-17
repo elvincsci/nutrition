@@ -14,7 +14,7 @@
 		E530FE94204C7FDF0089E0A8 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530FE93204C7FDF0089E0A8 /* Message.swift */; };
 		E530FE98204C80490089E0A8 /* MessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530FE97204C80490089E0A8 /* MessagesVC.swift */; };
 		E530FE9A204CEE300089E0A8 /* ChatCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530FE99204CEE300089E0A8 /* ChatCells.swift */; };
-		E54F7482207500F200234F1D /* waterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54F7481207500F200234F1D /* waterViewController.swift */; };
+		E54F7482207500F200234F1D /* StressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54F7481207500F200234F1D /* StressViewController.swift */; };
 		E54F7484207521EE00234F1D /* addViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54F7483207521EE00234F1D /* addViewController.swift */; };
 		E557584D2019472600A2BC4A /* NewsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E557584C2019472600A2BC4A /* NewsListTableViewCell.swift */; };
 		E557584F201966A400A2BC4A /* dashboardCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E557584E201966A400A2BC4A /* dashboardCellTableViewCell.swift */; };
@@ -22,6 +22,12 @@
 		E56FA26A1FCFCADD00B885A8 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56FA2691FCFCADD00B885A8 /* Video.swift */; };
 		E56FA26D1FCFE28700B885A8 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56FA26C1FCFE28700B885A8 /* ApiService.swift */; };
 		E58B8A3A1FCB514000045045 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58B8A391FCB514000045045 /* TabController.swift */; };
+		E59B03BE2085277800814945 /* AerobicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59B03BD2085277800814945 /* AerobicViewController.swift */; };
+		E59B03C02085279800814945 /* AnaerobicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59B03BF2085279800814945 /* AnaerobicViewController.swift */; };
+		E59B03C2208527AF00814945 /* StretchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59B03C1208527AF00814945 /* StretchViewController.swift */; };
+		E59B03C52085671C00814945 /* WaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59B03C42085671C00814945 /* WaterViewController.swift */; };
+		E59B03C72085676900814945 /* FoodMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59B03C62085676900814945 /* FoodMainViewController.swift */; };
+		E5B86A522085B71700FD617B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B86A512085B71700FD617B /* TableViewController.swift */; };
 		E5B8907120752D6100CF2EC6 /* FoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8907020752D6100CF2EC6 /* FoodViewController.swift */; };
 		E5B8907320752D8000CF2EC6 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8907220752D8000CF2EC6 /* ExerciseViewController.swift */; };
 		E5B89075207530A800CF2EC6 /* WeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B89074207530A800CF2EC6 /* WeightViewController.swift */; };
@@ -72,7 +78,7 @@
 		E530FE93204C7FDF0089E0A8 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		E530FE97204C80490089E0A8 /* MessagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesVC.swift; sourceTree = "<group>"; };
 		E530FE99204CEE300089E0A8 /* ChatCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCells.swift; sourceTree = "<group>"; };
-		E54F7481207500F200234F1D /* waterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = waterViewController.swift; sourceTree = "<group>"; };
+		E54F7481207500F200234F1D /* StressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StressViewController.swift; sourceTree = "<group>"; };
 		E54F7483207521EE00234F1D /* addViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addViewController.swift; sourceTree = "<group>"; };
 		E557584C2019472600A2BC4A /* NewsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListTableViewCell.swift; sourceTree = "<group>"; };
 		E557584E201966A400A2BC4A /* dashboardCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dashboardCellTableViewCell.swift; sourceTree = "<group>"; };
@@ -80,6 +86,12 @@
 		E56FA2691FCFCADD00B885A8 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		E56FA26C1FCFE28700B885A8 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		E58B8A391FCB514000045045 /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
+		E59B03BD2085277800814945 /* AerobicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AerobicViewController.swift; sourceTree = "<group>"; };
+		E59B03BF2085279800814945 /* AnaerobicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnaerobicViewController.swift; sourceTree = "<group>"; };
+		E59B03C1208527AF00814945 /* StretchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchViewController.swift; sourceTree = "<group>"; };
+		E59B03C42085671C00814945 /* WaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterViewController.swift; sourceTree = "<group>"; };
+		E59B03C62085676900814945 /* FoodMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMainViewController.swift; sourceTree = "<group>"; };
+		E5B86A512085B71700FD617B /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		E5B8907020752D6100CF2EC6 /* FoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewController.swift; sourceTree = "<group>"; };
 		E5B8907220752D8000CF2EC6 /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
 		E5B89074207530A800CF2EC6 /* WeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +178,37 @@
 			path = "Api service";
 			sourceTree = "<group>";
 		};
+		E59B03BB2082F7FE00814945 /* mydashboard */ = {
+			isa = PBXGroup;
+			children = (
+				E5B8907220752D8000CF2EC6 /* ExerciseViewController.swift */,
+				E54F7481207500F200234F1D /* StressViewController.swift */,
+				E5B8907620754C7600CF2EC6 /* sleepViewController.swift */,
+				E5B8907020752D6100CF2EC6 /* FoodViewController.swift */,
+				E5B89074207530A800CF2EC6 /* WeightViewController.swift */,
+			);
+			path = mydashboard;
+			sourceTree = "<group>";
+		};
+		E59B03BC2085240400814945 /* Exercise */ = {
+			isa = PBXGroup;
+			children = (
+				E59B03BD2085277800814945 /* AerobicViewController.swift */,
+				E59B03BF2085279800814945 /* AnaerobicViewController.swift */,
+				E59B03C1208527AF00814945 /* StretchViewController.swift */,
+			);
+			path = Exercise;
+			sourceTree = "<group>";
+		};
+		E59B03C32085670300814945 /* food */ = {
+			isa = PBXGroup;
+			children = (
+				E59B03C42085671C00814945 /* WaterViewController.swift */,
+				E59B03C62085676900814945 /* FoodMainViewController.swift */,
+			);
+			path = food;
+			sourceTree = "<group>";
+		};
 		E5E01E371FD246CC00B6A74F /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +220,7 @@
 		E5F5A7991FC9CFF800FCD6D9 = {
 			isa = PBXGroup;
 			children = (
+				E5B86A512085B71700FD617B /* TableViewController.swift */,
 				E5F5A7A41FC9CFF800FCD6D9 /* nutrition */,
 				E5F5A7B91FC9CFF800FCD6D9 /* nutritionTests */,
 				E5F5A7C41FC9CFF800FCD6D9 /* nutritionUITests */,
@@ -234,17 +278,15 @@
 		E5F5A7D31FC9E11700FCD6D9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E59B03C32085670300814945 /* food */,
+				E59B03BC2085240400814945 /* Exercise */,
+				E59B03BB2082F7FE00814945 /* mydashboard */,
 				E58B8A391FCB514000045045 /* TabController.swift */,
 				E5F5A7A71FC9CFF800FCD6D9 /* landingVC.swift */,
-				E5B8907620754C7600CF2EC6 /* sleepViewController.swift */,
 				E51FF40C204865890085F83F /* deviceViewController.swift */,
-				E5B8907220752D8000CF2EC6 /* ExerciseViewController.swift */,
 				E530FE97204C80490089E0A8 /* MessagesVC.swift */,
-				E5B89074207530A800CF2EC6 /* WeightViewController.swift */,
 				E530FE99204CEE300089E0A8 /* ChatCells.swift */,
-				E5B8907020752D6100CF2EC6 /* FoodViewController.swift */,
 				E54F7483207521EE00234F1D /* addViewController.swift */,
-				E54F7481207500F200234F1D /* waterViewController.swift */,
 				E5EF79001FCB854B003302C2 /* SettingViewController.swift */,
 				E5EF79021FCB8827003302C2 /* HomeViewController.swift */,
 				E557584C2019472600A2BC4A /* NewsListTableViewCell.swift */,
@@ -583,6 +625,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E59B03BE2085277800814945 /* AerobicViewController.swift in Sources */,
 				E557584F201966A400A2BC4A /* dashboardCellTableViewCell.swift in Sources */,
 				E5B8907120752D6100CF2EC6 /* FoodViewController.swift in Sources */,
 				E5B8907320752D8000CF2EC6 /* ExerciseViewController.swift in Sources */,
@@ -592,20 +635,25 @@
 				E5F5A7DB1FCA5C3800FCD6D9 /* User.swift in Sources */,
 				E530FE98204C80490089E0A8 /* MessagesVC.swift in Sources */,
 				E5F5A7A81FC9CFF800FCD6D9 /* landingVC.swift in Sources */,
-				E54F7482207500F200234F1D /* waterViewController.swift in Sources */,
+				E54F7482207500F200234F1D /* StressViewController.swift in Sources */,
 				E5E01E361FD1E45500B6A74F /* dashboardVC.swift in Sources */,
 				E5F5A7D61FC9E31600FCD6D9 /* loginVC.swift in Sources */,
+				E5B86A522085B71700FD617B /* TableViewController.swift in Sources */,
 				E56FA26A1FCFCADD00B885A8 /* Video.swift in Sources */,
 				E5F5A7A61FC9CFF800FCD6D9 /* AppDelegate.swift in Sources */,
+				E59B03C02085279800814945 /* AnaerobicViewController.swift in Sources */,
 				E56FA26D1FCFE28700B885A8 /* ApiService.swift in Sources */,
+				E59B03C72085676900814945 /* FoodMainViewController.swift in Sources */,
 				E5E01E391FD2471500B6A74F /* Helper Files.swift in Sources */,
 				E58B8A3A1FCB514000045045 /* TabController.swift in Sources */,
 				E5EF79011FCB854B003302C2 /* SettingViewController.swift in Sources */,
 				E5EF79051FCB8A1C003302C2 /* MainViewController.swift in Sources */,
 				E530FE94204C7FDF0089E0A8 /* Message.swift in Sources */,
 				E5B8907720754C7600CF2EC6 /* sleepViewController.swift in Sources */,
+				E59B03C2208527AF00814945 /* StretchViewController.swift in Sources */,
 				E51FF40D204865890085F83F /* deviceViewController.swift in Sources */,
 				E54F7484207521EE00234F1D /* addViewController.swift in Sources */,
+				E59B03C52085671C00814945 /* WaterViewController.swift in Sources */,
 				E557584D2019472600A2BC4A /* NewsListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

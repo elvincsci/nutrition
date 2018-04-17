@@ -33,7 +33,7 @@ class dashboardVC: UINavigationController {
         //Water image
 
         
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(addWaterTapped(tapGestureRecognizer:)))
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(addStressTapped(tapGestureRecognizer:)))
         self.waterPic.isUserInteractionEnabled = true
         self.waterPic.addGestureRecognizer(tapGestureRecognizer)
         
@@ -143,8 +143,6 @@ class dashboardVC: UINavigationController {
         self.dismissExtraViews()
     }
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.customization()
@@ -158,10 +156,11 @@ class dashboardVC: UINavigationController {
     
 
     
-    @objc func addWaterTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    @objc func addStressTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
+        //stress
         self.dismissExtraViews()
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "dailyActivities") as! waterViewController
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Stress") as! StressViewController
         self.show(vc, sender: self)
 
     }
@@ -169,36 +168,28 @@ class dashboardVC: UINavigationController {
     
     @objc func addSleepTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
-        // let tappedImage = tapGestureRecognizer.view as! UIImageView
-        // Your action
-        
+        //Sleep
         self.dismissExtraViews()
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "addFood") as! FoodViewController
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "sleep") as! sleepViewController
         vc.view.backgroundColor = UIColor.white
-        //vc.title = "Devices"
         self.show(vc, sender: nil)
     }
 
     @objc func addFoodTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
-        // let tappedImage = tapGestureRecognizer.view as! UIImageView
-        // Your action
-        
+        //Add Food
         self.dismissExtraViews()
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "addFood") as! FoodViewController
         vc.view.backgroundColor = UIColor.white
-        //vc.title = "Devices"
         self.show(vc, sender: nil)
     }
     
     @objc func addExerciseTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
-        // let tappedImage = tapGestureRecognizer.view as! UIImageView
-        
+        //Body measurement
         self.dismissExtraViews()
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "addExercise") as! ExerciseViewController
         vc.view.backgroundColor = UIColor.white
-        //vc.title = "Devices"
         self.show(vc, sender: nil)
         
         // Your action
@@ -207,12 +198,10 @@ class dashboardVC: UINavigationController {
     
     @objc func addWeightTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
-        
-        
+        //Weight data
         self.dismissExtraViews()
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "device") as! WeightViewController
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "weightData") as! WeightViewController
         vc.view.backgroundColor = UIColor.white
-        vc.title = "Devices"
         self.show(vc, sender: nil)
 
     }

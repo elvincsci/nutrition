@@ -1,13 +1,14 @@
-//  sleepViewController.swift
+//
+//  StretchViewController.swift
 //  nutrition
 //
-//  Created by elvin on 4/4/18.
+//  Created by elvin on 4/16/18.
 //  Copyright © 2018 elvin. All rights reserved.
 //
 
 import UIKit
 
-class sleepViewController: UIViewController {
+class StretchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

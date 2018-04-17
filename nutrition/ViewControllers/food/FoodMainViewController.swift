@@ -1,14 +1,14 @@
 //
-//  WeightViewController.swift
+//  FoodMainViewController.swift
 //  nutrition
 //
-//  Created by elvin on 4/4/18.
+//  Created by elvin on 4/16/18.
 //  Copyright © 2018 elvin. All rights reserved.
 //
 
 import UIKit
 
-class WeightViewController: UIViewController {
+class FoodMainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +20,7 @@ class WeightViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 
     /*
     // MARK: - Navigation

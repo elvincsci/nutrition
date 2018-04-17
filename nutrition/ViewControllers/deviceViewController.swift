@@ -52,7 +52,6 @@ class deviceViewController: UIViewController {
 
     var ref: DatabaseReference!
 
-    
     @IBOutlet var labelNokia: UILabel!
     
     var authSession: SFAuthenticationSession?
@@ -110,16 +109,13 @@ class deviceViewController: UIViewController {
                         //let courses = try JSONDecoder().decode(Course.self, from: data)
                         let animeJsonStuff =  try JSONDecoder().decode(Weight_Json.self, from: data)
 
-                        print("-------- ---- ", animeJsonStuff.Status_message!)
+                        //print("-------- ---- ", animeJsonStuff.Status_message!)
                         
-                        //print("-------- ---- ",animeJsonStuff.Weight_Data[1].Weight_date!)
-
     
                         DispatchQueue.main.async {
                             
                             for jsonMedia in animeJsonStuff.Weight_Data {
                                 
-                               // print("-------- ---- ",jsonMedia.Weight_date!)
                                 
                                 self.ref = Database.database().reference()
 

@@ -24,6 +24,8 @@ class Video {
         Database.database().reference().child("newsFeedContent").observe(.childAdded,
           with: { (snap) in
             
+            //add if statement to check if snap is not emply. 
+            
             let receivedMessage = snap.value as! [String: Any]
 
             let content = receivedMessage["content"] as! String

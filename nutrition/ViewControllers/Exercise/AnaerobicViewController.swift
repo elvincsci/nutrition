@@ -1,19 +1,17 @@
 //
-//  FoodViewController.swift
+//  AnaerobicViewController.swift
 //  nutrition
 //
-//  Created by elvin on 4/4/18.
+//  Created by elvin on 4/16/18.
 //  Copyright © 2018 elvin. All rights reserved.
 //
 
 import UIKit
 
-class FoodViewController: UIViewController {
+class AnaerobicViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.title = "Add Food"
 
         // Do any additional setup after loading the view.
     }

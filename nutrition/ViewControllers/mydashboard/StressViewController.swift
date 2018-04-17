@@ -7,13 +7,19 @@
 //
 
 import UIKit
+import Firebase
 
-class waterViewController: UIViewController {
 
+class StressViewController: UIViewController {
+    
+    @IBOutlet weak var StressIndictor: UITextField!
+    
+    @IBOutlet weak var Slider: UISlider!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Add Water"
+        self.title = "Stress"
 
         //self.title = "add water"
         // Do any additional setup after loading the view.
@@ -24,7 +30,43 @@ class waterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    @IBAction func slideraction(_ sender: UISlider) {
+        
+        StressIndictor.text = Int(Slider.value).description
+    }
+    
 
+    @IBAction func SubmitStress(_ sender: Any) {
+        
+        
+        if StressIndictor.text != ""
+        {
+            let ref = Database.database().reference()
+        
+            let uid = Auth.auth().currentUser?.uid
+
+            let Stress = ref.child("users").child(uid!).child("Stress").childByAutoId()
+        
+            let StressInd = Stress.child("Stress")
+            StressInd.setValue(Int(Slider.value).description)
+        
+            let timestamp = NSDate().timeIntervalSince1970
+            let StressTimestamp = Stress.child("TimeStamp")
+            StressTimestamp.setValue(timestamp)
+            
+        }else{
+            
+            //Display message when nothing is entered. 
+            print("empty")
+            
+        }
+        
+        
+        
+        
+    }
+    
     /*
     // MARK: - Navigation
 

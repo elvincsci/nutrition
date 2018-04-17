@@ -11,22 +11,12 @@ import UIKit
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
     
     
-    
     @IBOutlet weak var tableView: UITableView!
-    //@IBOutlet var tableView: UITableView!
     var videos = [Video]()
     
     var lastContentOffset: CGFloat = 0.0
     
-    
-    //MARK: Methods
-//    func customization() {
-//        self.tableView.contentInset = UIEdgeInsetsMake(50, 0, 30, 0)
-//        self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(50, 0, 30, 0)
-//        self.tableView.rowHeight = UITableViewAutomaticDimension
-//        self.tableView.estimatedRowHeight = 300
-//    }
-//
+
     func customization() {
         self.tableView.contentInset = UIEdgeInsetsMake(50, 0, 30, 0)
         self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(50, 0, 30, 0)
@@ -45,18 +35,22 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 //            print(video.videoLink)
             
             weakSelf?.videos.append(video)
-            
-            weakSelf?.videos.sort{ $0.timestamp < $1.timestamp }
-            
-            DispatchQueue.main.async {
-                
-                if let state = weakSelf?.videos.isEmpty, state == false {
-                    
-                    weakSelf?.tableView.reloadData()
+            weakSelf?.tableView.reloadData()
 
-                    
-                }
-            }
+            
+            //weakSelf?.videos.sort{ $0.timestamp < $1.timestamp }
+            
+//            DispatchQueue.main.async {
+//
+//                if let state = weakSelf?.videos.isEmpty, state == false {
+//
+//                    weakSelf?.tableView.reloadData()
+//
+//
+//                }
+//            }
+//
+            
         })
     } 
     
@@ -74,11 +68,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
-
-    
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        NotificationCenter.default.post(name: NSNotification.Name("open"), object: nil)
+        print("clicked on")
+        //NotificationCenter.default.post(name: NSNotification.Name("open"), object: nil)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -109,6 +101,43 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+}
+
+
+class NewsListTableViewCell: UITableViewCell {
+    
+    @IBOutlet var imageThumbnail: UIImageView!
+    @IBOutlet var titleLB: UILabel!
+    @IBOutlet var descriptionLB: UILabel!
+    
+    
+    
+    //    override func setSelected(_ selected: Bool, animated: Bool) {
+    //
+    //        super.setSelected(selected, animated: animated)
+    //        // Configure the view for the selected state
+    //        print("selected")
+    //
+    //    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.imageThumbnail.image = UIImage.init(named: "emptyTumbnail")
+        //        self.durationLabel.text = nil
+        //        self.channelPic.image = nil
+        //        self.videoTitle.text = nil
+        //        self.videoDescription.text = nil
+    }
+    
+    func set(video: Video)  {
+        self.imageThumbnail.image = video.thumbNailimage
+        self.titleLB.text = video.content as? String
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
     }
     
     
