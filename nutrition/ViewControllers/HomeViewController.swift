@@ -93,6 +93,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         //self.customization()
         self.fetchData()
         
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        
         // Do any additional setup after loading the view.
         // Do any additional setup after loading the view.
     }
