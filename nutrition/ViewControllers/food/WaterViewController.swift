@@ -49,7 +49,7 @@ class WaterViewController: UIViewController {
     }
     @IBAction func plusOneButton(_ sender: Any) {
         
-        if waterInput.text! != nil
+        if waterInput.text! != ""
         {
             let number = Int(waterInput.text!)! + 1
             waterInput.text = number.description

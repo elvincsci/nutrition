@@ -84,7 +84,13 @@ class WeightViewController: UIViewController {
             NokiaSecretStr.setValue(timestamp)
             
             let NokiaTokenStr = Nokiacredentials.child("UserWeight")
-            NokiaTokenStr.setValue(Weight.text)
+            NokiaTokenStr.setValue(Int(Weight.text!))
+            
+            let BodyFat = Nokiacredentials.child("BodyFat")
+            BodyFat.setValue(Int(BFI.text!))
+            
+            let BodyMass = Nokiacredentials.child("BodyMass")
+            BodyMass.setValue(Int(BMI.text!))
             
         }
         

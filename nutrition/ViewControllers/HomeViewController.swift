@@ -30,9 +30,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         Video.downloadAllMessages(completion: {[weak weakSelf = self] (video) in
             
-//            print("hererer")
-//            print(video.content)
-//            print(video.videoLink)
             
             weakSelf?.videos.append(video)
             weakSelf?.tableView.reloadData()
@@ -70,6 +67,16 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("clicked on")
+        
+        print(self.videos[indexPath.row].content)
+        
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "player") as! PlayerViewController
+        
+        controller.someString = self.videos[indexPath.row].videoLink.absoluteString
+        
+        navigationController?.pushViewController(controller, animated: true)
+
+      //  controller.
         //NotificationCenter.default.post(name: NSNotification.Name("open"), object: nil)
     }
     

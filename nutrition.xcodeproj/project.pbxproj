@@ -20,14 +20,12 @@
 		E557584F201966A400A2BC4A /* dashboardCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E557584E201966A400A2BC4A /* dashboardCellTableViewCell.swift */; };
 		E56FA25F1FCCA08200B885A8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E56FA25E1FCCA08200B885A8 /* GoogleService-Info.plist */; };
 		E56FA26A1FCFCADD00B885A8 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56FA2691FCFCADD00B885A8 /* Video.swift */; };
-		E56FA26D1FCFE28700B885A8 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56FA26C1FCFE28700B885A8 /* ApiService.swift */; };
 		E58B8A3A1FCB514000045045 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58B8A391FCB514000045045 /* TabController.swift */; };
 		E59B03BE2085277800814945 /* AerobicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59B03BD2085277800814945 /* AerobicViewController.swift */; };
 		E59B03C02085279800814945 /* AnaerobicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59B03BF2085279800814945 /* AnaerobicViewController.swift */; };
 		E59B03C2208527AF00814945 /* StretchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59B03C1208527AF00814945 /* StretchViewController.swift */; };
 		E59B03C52085671C00814945 /* WaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59B03C42085671C00814945 /* WaterViewController.swift */; };
 		E59B03C72085676900814945 /* FoodMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59B03C62085676900814945 /* FoodMainViewController.swift */; };
-		E5B86A522085B71700FD617B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B86A512085B71700FD617B /* TableViewController.swift */; };
 		E5B8907120752D6100CF2EC6 /* FoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8907020752D6100CF2EC6 /* FoodViewController.swift */; };
 		E5B8907320752D8000CF2EC6 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8907220752D8000CF2EC6 /* ExerciseViewController.swift */; };
 		E5B89075207530A800CF2EC6 /* WeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B89074207530A800CF2EC6 /* WeightViewController.swift */; };
@@ -46,6 +44,8 @@
 		E5F5A7C61FC9CFF800FCD6D9 /* nutritionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F5A7C51FC9CFF800FCD6D9 /* nutritionUITests.swift */; };
 		E5F5A7D61FC9E31600FCD6D9 /* loginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F5A7D51FC9E31600FCD6D9 /* loginVC.swift */; };
 		E5F5A7DB1FCA5C3800FCD6D9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F5A7DA1FCA5C3800FCD6D9 /* User.swift */; };
+		E5FB72B8208EB706000491F6 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FB72B7208EB706000491F6 /* PlayerViewController.swift */; };
+		E5FB72BA208EDB56000491F6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FB72B9208EDB56000491F6 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,14 +84,12 @@
 		E557584E201966A400A2BC4A /* dashboardCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dashboardCellTableViewCell.swift; sourceTree = "<group>"; };
 		E56FA25E1FCCA08200B885A8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E56FA2691FCFCADD00B885A8 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
-		E56FA26C1FCFE28700B885A8 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		E58B8A391FCB514000045045 /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		E59B03BD2085277800814945 /* AerobicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AerobicViewController.swift; sourceTree = "<group>"; };
 		E59B03BF2085279800814945 /* AnaerobicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnaerobicViewController.swift; sourceTree = "<group>"; };
 		E59B03C1208527AF00814945 /* StretchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchViewController.swift; sourceTree = "<group>"; };
 		E59B03C42085671C00814945 /* WaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterViewController.swift; sourceTree = "<group>"; };
 		E59B03C62085676900814945 /* FoodMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMainViewController.swift; sourceTree = "<group>"; };
-		E5B86A512085B71700FD617B /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		E5B8907020752D6100CF2EC6 /* FoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewController.swift; sourceTree = "<group>"; };
 		E5B8907220752D8000CF2EC6 /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
 		E5B89074207530A800CF2EC6 /* WeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +114,8 @@
 		E5F5A7C71FC9CFF800FCD6D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5F5A7D51FC9E31600FCD6D9 /* loginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginVC.swift; sourceTree = "<group>"; };
 		E5F5A7DA1FCA5C3800FCD6D9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E5FB72B7208EB706000491F6 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		E5FB72B9208EDB56000491F6 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		EE56BE6DA2D6848434D8A512 /* Pods-nutrition.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nutrition.release.xcconfig"; path = "Pods/Target Support Files/Pods-nutrition/Pods-nutrition.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,14 +170,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		E56FA26B1FCFE22B00B885A8 /* Api service */ = {
-			isa = PBXGroup;
-			children = (
-				E56FA26C1FCFE28700B885A8 /* ApiService.swift */,
-			);
-			path = "Api service";
-			sourceTree = "<group>";
-		};
 		E59B03BB2082F7FE00814945 /* mydashboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,7 +212,8 @@
 		E5F5A7991FC9CFF800FCD6D9 = {
 			isa = PBXGroup;
 			children = (
-				E5B86A512085B71700FD617B /* TableViewController.swift */,
+				E5FB72B9208EDB56000491F6 /* ProfileViewController.swift */,
+				E5FB72B7208EB706000491F6 /* PlayerViewController.swift */,
 				E5F5A7A41FC9CFF800FCD6D9 /* nutrition */,
 				E5F5A7B91FC9CFF800FCD6D9 /* nutritionTests */,
 				E5F5A7C41FC9CFF800FCD6D9 /* nutritionUITests */,
@@ -243,7 +236,6 @@
 		E5F5A7A41FC9CFF800FCD6D9 /* nutrition */ = {
 			isa = PBXGroup;
 			children = (
-				E56FA26B1FCFE22B00B885A8 /* Api service */,
 				E5F5A7D91FCA5C0100FCD6D9 /* model */,
 				E5F5A7A51FC9CFF800FCD6D9 /* AppDelegate.swift */,
 				E5F5A7A91FC9CFF800FCD6D9 /* Main.storyboard */,
@@ -637,12 +629,11 @@
 				E5F5A7A81FC9CFF800FCD6D9 /* landingVC.swift in Sources */,
 				E54F7482207500F200234F1D /* StressViewController.swift in Sources */,
 				E5E01E361FD1E45500B6A74F /* dashboardVC.swift in Sources */,
+				E5FB72BA208EDB56000491F6 /* ProfileViewController.swift in Sources */,
 				E5F5A7D61FC9E31600FCD6D9 /* loginVC.swift in Sources */,
-				E5B86A522085B71700FD617B /* TableViewController.swift in Sources */,
 				E56FA26A1FCFCADD00B885A8 /* Video.swift in Sources */,
 				E5F5A7A61FC9CFF800FCD6D9 /* AppDelegate.swift in Sources */,
 				E59B03C02085279800814945 /* AnaerobicViewController.swift in Sources */,
-				E56FA26D1FCFE28700B885A8 /* ApiService.swift in Sources */,
 				E59B03C72085676900814945 /* FoodMainViewController.swift in Sources */,
 				E5E01E391FD2471500B6A74F /* Helper Files.swift in Sources */,
 				E58B8A3A1FCB514000045045 /* TabController.swift in Sources */,
@@ -655,6 +646,7 @@
 				E54F7484207521EE00234F1D /* addViewController.swift in Sources */,
 				E59B03C52085671C00814945 /* WaterViewController.swift in Sources */,
 				E557584D2019472600A2BC4A /* NewsListTableViewCell.swift in Sources */,
+				E5FB72B8208EB706000491F6 /* PlayerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

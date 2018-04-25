@@ -1,22 +1,30 @@
 //
-//  StretchViewController.swift
+//  PlayerViewController.swift
 //  nutrition
 //
-//  Created by elvin on 4/16/18.
+//  Created by elvin on 4/23/18.
 //  Copyright © 2018 elvin. All rights reserved.
 //
 
 import UIKit
-import Firebase
 
+class PlayerViewController: UIViewController {
 
-class StretchViewController: UIViewController {
+    @IBOutlet weak var myWebView: UIWebView!
+    
+    var someString: String?
 
-    @IBOutlet weak var Duration: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //getVideo(videoCode: "C0Z6tJdeQ_E")
 
+        if let range = someString!.range(of: "v=") {
+            let videoID = someString![range.upperBound...]
+            getVideo(videoCode: String(videoID)) // prints "123.456.7891"
+        }
+        
         // Do any additional setup after loading the view.
     }
 
@@ -25,23 +33,12 @@ class StretchViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func submitButton(_ sender: Any) {
-        
-        
-        let ref = Database.database().reference()
-        
-        let uid = Auth.auth().currentUser?.uid
-        
-        let Stretchdata = ref.child("users").child(uid!).child("Stretch").childByAutoId()
-        
-        let Distance = Stretchdata.child("Duration")
-        Distance.setValue(Int(Duration.text!))
-        
-        
-        let timestamp = NSDate().timeIntervalSince1970
-        let StressTimestamp = Stretchdata.child("TimeStamp")
-        StressTimestamp.setValue(timestamp)
-        
+
+    
+    func getVideo(videoCode:String)
+    {
+        let url = URL(string: "https://www.youtube.com/embed/\(videoCode)")
+        myWebView.loadRequest(URLRequest(url: url!))
     }
     
     /*

@@ -43,14 +43,13 @@ class SettingViewController: QuickTableViewController {
                 ]),
 
             
-            
-            Section(title: "SECURITY", rows: [
-                
-                SwitchRow<SwitchCell>(title: "Use Touch ID", switchValue: false, icon: Icon(image: #imageLiteral(resourceName: "finger2")), action: weakify(self, type(of: self).didToggleSwitch)),
-
-                NavigationRow(title: "Notification", subtitle: .none, icon: Icon(image: #imageLiteral(resourceName: "profile")), action: weakify(self, type(of: self).showDetail)),
-                
-                ]),
+//            Section(title: "SECURITY", rows: [
+//
+//                SwitchRow<SwitchCell>(title: "Use Touch ID", switchValue: false, icon: Icon(image: #imageLiteral(resourceName: "finger2")), action: weakify(self, type(of: self).didToggleSwitch)),
+//
+//                NavigationRow(title: "Notification", subtitle: .none, icon: Icon(image: #imageLiteral(resourceName: "profile")), action: weakify(self, type(of: self).showDetail)),
+//
+//                ]),
 
             
             Section(title: "", rows: [
@@ -103,10 +102,18 @@ class SettingViewController: QuickTableViewController {
     
     private func showDetail(_ sender: Row) {
         let detail = "\(sender.title)\(sender.subtitle?.text ?? "")"
-        let controller = UIViewController()
+        
+//        let controller = UIViewController()
+//        controller.view.backgroundColor = UIColor.white
+//        controller.title = detail
+//        navigationController?.pushViewController(controller, animated: true)
+        
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "myprofile") as! ProfileViewController
         controller.view.backgroundColor = UIColor.white
         controller.title = detail
+        
         navigationController?.pushViewController(controller, animated: true)
+        
     }
     
     
