@@ -16,6 +16,7 @@
 		E530FE9A204CEE300089E0A8 /* ChatCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530FE99204CEE300089E0A8 /* ChatCells.swift */; };
 		E54F7482207500F200234F1D /* StressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54F7481207500F200234F1D /* StressViewController.swift */; };
 		E54F7484207521EE00234F1D /* addViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54F7483207521EE00234F1D /* addViewController.swift */; };
+		E555E72D2090575700C370E4 /* dashboardValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E555E72C2090575700C370E4 /* dashboardValue.swift */; };
 		E557584D2019472600A2BC4A /* NewsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E557584C2019472600A2BC4A /* NewsListTableViewCell.swift */; };
 		E557584F201966A400A2BC4A /* dashboardCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E557584E201966A400A2BC4A /* dashboardCellTableViewCell.swift */; };
 		E56FA25F1FCCA08200B885A8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E56FA25E1FCCA08200B885A8 /* GoogleService-Info.plist */; };
@@ -80,6 +81,7 @@
 		E530FE99204CEE300089E0A8 /* ChatCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCells.swift; sourceTree = "<group>"; };
 		E54F7481207500F200234F1D /* StressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StressViewController.swift; sourceTree = "<group>"; };
 		E54F7483207521EE00234F1D /* addViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addViewController.swift; sourceTree = "<group>"; };
+		E555E72C2090575700C370E4 /* dashboardValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dashboardValue.swift; sourceTree = "<group>"; };
 		E557584C2019472600A2BC4A /* NewsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListTableViewCell.swift; sourceTree = "<group>"; };
 		E557584E201966A400A2BC4A /* dashboardCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dashboardCellTableViewCell.swift; sourceTree = "<group>"; };
 		E56FA25E1FCCA08200B885A8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 				E5F5A7DA1FCA5C3800FCD6D9 /* User.swift */,
 				E530FE93204C7FDF0089E0A8 /* Message.swift */,
 				E56FA2691FCFCADD00B885A8 /* Video.swift */,
+				E555E72C2090575700C370E4 /* dashboardValue.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -636,6 +639,7 @@
 				E59B03C02085279800814945 /* AnaerobicViewController.swift in Sources */,
 				E59B03C72085676900814945 /* FoodMainViewController.swift in Sources */,
 				E5E01E391FD2471500B6A74F /* Helper Files.swift in Sources */,
+				E555E72D2090575700C370E4 /* dashboardValue.swift in Sources */,
 				E58B8A3A1FCB514000045045 /* TabController.swift in Sources */,
 				E5EF79011FCB854B003302C2 /* SettingViewController.swift in Sources */,
 				E5EF79051FCB8A1C003302C2 /* MainViewController.swift in Sources */,

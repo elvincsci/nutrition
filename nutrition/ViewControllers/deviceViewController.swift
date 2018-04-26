@@ -127,7 +127,8 @@ class deviceViewController: UIViewController {
 
                                 let NokiaSecretStr = Nokiacredentials.child("UserDate")
                                 NokiaSecretStr.setValue(jsonMedia.Weight_date!)
-
+                            
+                                
                                 let NokiaTokenStr = Nokiacredentials.child("UserWeight")
                                 NokiaTokenStr.setValue(jsonMedia.Weight_kg)
                                 

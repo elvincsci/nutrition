@@ -66,9 +66,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("clicked on")
-        
-        print(self.videos[indexPath.row].content)
+       // print(self.videos[indexPath.row].content)
         
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "player") as! PlayerViewController
         

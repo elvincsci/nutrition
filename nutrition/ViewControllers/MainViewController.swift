@@ -8,24 +8,21 @@
 
 import UIKit
 
-class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
     
- 
+    @IBOutlet weak var tableView: UITableView!
     
-    //MARK: Delegates
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 9
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! dashboardCellTableViewCell
-        //cell.set(video: self.videos[indexPath.row])
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myDashboard") as! myDashboardTableViewCell
+        
+       // cell.set(video: self.videos[indexPath.row])
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        NotificationCenter.default.post(name: NSNotification.Name("open"), object: nil)
-    }
 
     @IBOutlet var container: UIView!
     var topAnchorContraint: NSLayoutConstraint!
@@ -58,7 +55,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Do any additional setup after loading the view.
         self.customization()
 
-
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         // Do any additional setup after loading the view.
     }
 
@@ -77,5 +75,44 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Pass the selected object to the new view controller.
     }
     */
+}
+
+
+class myDashboardTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var dateLB: UILabel!
+    @IBOutlet weak var valueLB: UILabel!
+    @IBOutlet weak var typeLB: UILabel!
+    
+    
+    
+    //    override func setSelected(_ selected: Bool, animated: Bool) {
+    //
+    //        super.setSelected(selected, animated: animated)
+    //        // Configure the view for the selected state
+    //        print("selected")
+    //
+    //    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        //        self.durationLabel.text = nil
+        //        self.channelPic.image = nil
+        //        self.videoTitle.text = nil
+        //        self.videoDescription.text = nil
+    }
+    
+    func set(dash: dashboardValue)  {
+        self.valueLB.text = dash.datapoint as? String
+        self.typeLB.text = dash.type as? String
+       // self.dateLB.text = dash.timestamp as? String
+
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    
 }
 
