@@ -76,6 +76,7 @@ class deviceViewController: UIViewController {
         
         let userID = Auth.auth().currentUser?.uid
         ref.child("users").child(userID!).child("Nokia credentials").observeSingleEvent(of: .value, with: { (snapshot) in
+            
             // Get user value
             let value = snapshot.value as? NSDictionary
             let NokiaSecretStr = value?["NokiaSecretStr"] as? String ?? ""

@@ -55,11 +55,8 @@ class MainViewController: UIViewController,UITableViewDelegate, UITableViewDataS
     func fetchData() {
         
         dashboardValue.downloadAllMessages(completion: {[weak weakSelf = self] (video) in
-        
             weakSelf?.dashboards.append(video)
             weakSelf?.tableView.reloadData()
-            
-        
         })
 
     }
@@ -75,11 +72,12 @@ class MainViewController: UIViewController,UITableViewDelegate, UITableViewDataS
         // Do any additional setup after loading the view.
         self.customization()
 
-        self.fetchData()
 
         self.tableView.delegate = self
         self.tableView.dataSource = self
         // Do any additional setup after loading the view.
+        self.fetchData()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -121,10 +119,7 @@ class myDashboardTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        //        self.durationLabel.text = nil
-        //        self.channelPic.image = nil
-        //        self.videoTitle.text = nil
-        //        self.videoDescription.text = nil
+        self.activityLB.text = "No results found"
     }
     
     func set(dash: dashboardValue)  {

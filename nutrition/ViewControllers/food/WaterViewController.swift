@@ -34,24 +34,28 @@ class WaterViewController: UIViewController {
     
     @IBAction func plusTwoButton(_ sender: Any) {
         
-        let number = Int(waterInput.text!)! + 2
-        
-        waterInput.text = number.description
-
+        if waterInput.text! != ""
+        {
+            let number = Int(waterInput.text!)! + 2
+            waterInput.text = number.description
+        }else
+        {
+            let number = 2
+            waterInput.text = number.description
+        }
 
     }
     
-    @IBAction func minusButton(_ sender: Any) {
-        
-        let number = Int(waterInput.text!)! - 1
-        waterInput.text = number.description
-        
-    }
+    
     @IBAction func plusOneButton(_ sender: Any) {
         
         if waterInput.text! != ""
         {
             let number = Int(waterInput.text!)! + 1
+            waterInput.text = number.description
+        }else
+        {
+            let number = 1
             waterInput.text = number.description
         }
     }

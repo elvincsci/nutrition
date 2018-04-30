@@ -39,7 +39,7 @@ class StressViewController: UIViewController {
 
     @IBAction func SubmitStress(_ sender: Any) {
         
-        
+
         if StressIndictor.text != ""
         {
             let ref = Database.database().reference()
@@ -49,12 +49,11 @@ class StressViewController: UIViewController {
             let Stress = ref.child("users").child(uid!).child("Stress").childByAutoId()
         
             let StressInd = Stress.child("Stress")
-            StressInd.setValue(Int(Slider.value).description)
-        
+            StressInd.setValue(Int(Int(Slider.value).description))
+            
             let timestamp = NSDate().timeIntervalSince1970
             let StressTimestamp = Stress.child("TimeStamp")
             StressTimestamp.setValue(timestamp)
-            
         }else{
             
             //Display message when nothing is entered. 

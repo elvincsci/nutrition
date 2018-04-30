@@ -46,8 +46,8 @@ class sleepViewController: UIViewController {
             let Stress = ref.child("users").child(uid!).child("Sleep").childByAutoId()
             
             let sleepInd = Stress.child("sleepValue")
-            sleepInd.setValue(Int(slider.value).description)
-            
+            sleepInd.setValue(Int(Int(slider.value).description))
+
             let timestamp = NSDate().timeIntervalSince1970
             let StressTimestamp = Stress.child("TimeStamp")
             StressTimestamp.setValue(timestamp)
