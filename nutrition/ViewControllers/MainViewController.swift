@@ -8,21 +8,24 @@
 
 import UIKit
 
-class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
+class MainViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    var dashboards = [dashboardValue]()
+
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 9
+        return self.dashboards.count
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myDashboard") as! myDashboardTableViewCell
-        
-       // cell.set(video: self.videos[indexPath.row])
+        cell.set(dash: self.dashboards[indexPath.row])
         return cell
     }
-    
+
 
     @IBOutlet var container: UIView!
     var topAnchorContraint: NSLayoutConstraint!
@@ -49,11 +52,30 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showExtraView"), object: nil, userInfo: info)
     }
     
+    func fetchData() {
+        
+        dashboardValue.downloadAllMessages(completion: {[weak weakSelf = self] (video) in
+        
+            weakSelf?.dashboards.append(video)
+            weakSelf?.tableView.reloadData()
+            
+        
+        })
+
+    }
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         self.customization()
+
+        self.fetchData()
 
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -82,7 +104,10 @@ class myDashboardTableViewCell: UITableViewCell {
     
     @IBOutlet weak var dateLB: UILabel!
     @IBOutlet weak var valueLB: UILabel!
-    @IBOutlet weak var typeLB: UILabel!
+
+    @IBOutlet weak var activityTypeLB: UILabel!
+    @IBOutlet weak var measurementTypeLB: UILabel!
+    @IBOutlet weak var activityLB: UILabel!
     
     
     
@@ -103,9 +128,21 @@ class myDashboardTableViewCell: UITableViewCell {
     }
     
     func set(dash: dashboardValue)  {
-        self.valueLB.text = dash.datapoint as? String
-        self.typeLB.text = dash.type as? String
-       // self.dateLB.text = dash.timestamp as? String
+        
+        self.activityLB.text = dash.activity as? String
+        self.activityTypeLB.text = dash.activitytype as? String
+        self.valueLB.text = dash.datapoint.description
+        self.measurementTypeLB.text = dash.measurementtype as? String
+        
+        
+        let unixTimestamp = dash.timestamp
+        let date = Date(timeIntervalSince1970: unixTimestamp)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM-dd-yyyy"
+        let strDate = dateFormatter.string(from: date)
+
+        self.dateLB.text = strDate.description
+
 
     }
     

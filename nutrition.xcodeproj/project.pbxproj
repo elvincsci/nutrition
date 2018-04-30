@@ -283,11 +283,11 @@
 				E54F7483207521EE00234F1D /* addViewController.swift */,
 				E5EF79001FCB854B003302C2 /* SettingViewController.swift */,
 				E5EF79021FCB8827003302C2 /* HomeViewController.swift */,
-				E557584C2019472600A2BC4A /* NewsListTableViewCell.swift */,
 				E5EF79041FCB8A1C003302C2 /* MainViewController.swift */,
 				E557584E201966A400A2BC4A /* dashboardCellTableViewCell.swift */,
 				E5F5A7D51FC9E31600FCD6D9 /* loginVC.swift */,
 				E5E01E351FD1E45500B6A74F /* dashboardVC.swift */,
+				E557584C2019472600A2BC4A /* NewsListTableViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
