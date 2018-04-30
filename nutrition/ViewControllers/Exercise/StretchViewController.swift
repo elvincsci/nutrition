@@ -41,6 +41,8 @@ class StretchViewController: UIViewController {
         let timestamp = NSDate().timeIntervalSince1970
         let StressTimestamp = Stretchdata.child("TimeStamp")
         StressTimestamp.setValue(timestamp)
+        _ = navigationController?.popViewController(animated: true)
+
         
     }
     

@@ -129,6 +129,7 @@ class FoodMainViewController:  UIViewController, UIPickerViewDataSource, UIPicke
         let timestamp = NSDate().timeIntervalSince1970
         let StressTimestamp = food.child("TimeStamp")
         StressTimestamp.setValue(timestamp)
+        _ = navigationController?.popViewController(animated: true)
 
     
     }

@@ -94,7 +94,8 @@ class AerobicViewController:  UIViewController, UIPickerViewDataSource, UIPicker
         StressTimestamp.setValue(timestamp)
 
         
-        
+        _ = navigationController?.popViewController(animated: true)
+
         
     }
     

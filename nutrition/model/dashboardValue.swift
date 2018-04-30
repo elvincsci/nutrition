@@ -22,7 +22,6 @@ class dashboardValue {
         
     let userID = Auth.auth().currentUser?.uid
         
-    var counter = 2
         
         Database.database().reference().child("users").child(userID!).child("Aerobic").observeSingleEvent(of: .childAdded, with: { (snapshot) in
             
@@ -33,13 +32,36 @@ class dashboardValue {
 
                 let type = receivedMessage["AerobicType"] as! String
                 let Caloriesburned = receivedMessage["Caloriesburned"] as! Int
-                let TimeStamp = receivedMessage["TimeStamp"] as! Double
-                let activity = "Aerobic"
-                let measurementtype = "Calories burned"
+//                let TimeStamp = receivedMessage["TimeStamp"] as! Double
+//                let activity = "Aerobic"
+//                let measurementtype = "Calories burned"
+//                
+//                let dash = dashboardValue.init(type: type, datapoint: Caloriesburned , timestamp: TimeStamp, activity:activity, measurementtype:measurementtype)
+//                
+//                completion(dash)
                 
-                let dash = dashboardValue.init(type: type, datapoint: Caloriesburned , timestamp: TimeStamp, activity:activity, measurementtype:measurementtype)
                 
-                completion(dash)
+                
+                if receivedMessage["TimeStamp"] == nil
+                {
+                    let TimeStamp = NSDate().timeIntervalSince1970
+                    let activity = "Aerobic"
+                    let measurementtype = "Calories burned"
+                    
+                    let dash = dashboardValue.init(type: type, datapoint: Caloriesburned , timestamp: TimeStamp, activity:activity, measurementtype:measurementtype)
+                    
+                    completion(dash)
+                    
+                }else{
+                    let TimeStamp = receivedMessage["TimeStamp"] as! Double
+                    let activity = "Aerobic"
+                    let measurementtype = "Calories burned"
+                    
+                    let dash = dashboardValue.init(type: type, datapoint: Caloriesburned , timestamp: TimeStamp, activity:activity, measurementtype:measurementtype)
+                    
+                    completion(dash)
+                }
+                
                 
              }
         
@@ -59,23 +81,49 @@ class dashboardValue {
                 let type = " "
                 let sleepValue = receivedMessage["sleepValue"] as! Int
                 
-                let TimeStamp = receivedMessage["TimeStamp"] as! Double
+//                let TimeStamp = receivedMessage["TimeStamp"] as! Double
+//
+////                let value = snapshot.value as? NSDictionary
+////                let type = " "
+////                let sleepValue = value!["sleepValue"] as! Int
+////                let TimeStamp = value!["TimeStamp"] as! Double
+//
+//
+//
+//                let activity = "Quality sleep"
+//                let measurementtype = "Hours of sleep"
+//
+//
+//
+//                let dash = dashboardValue.init(type: type, datapoint: sleepValue , timestamp: TimeStamp, activity:activity, measurementtype:measurementtype)
+//
+//                completion(dash)
+//
                 
-//                let value = snapshot.value as? NSDictionary
-//                let type = " "
-//                let sleepValue = value!["sleepValue"] as! Int
-//                let TimeStamp = value!["TimeStamp"] as! Double
-
-                
-                
-                let activity = "Quality sleep"
-                let measurementtype = "Hours of sleep"
                 
                 
                 
-                let dash = dashboardValue.init(type: type, datapoint: sleepValue , timestamp: TimeStamp, activity:activity, measurementtype:measurementtype)
+                if receivedMessage["TimeStamp"] == nil
+                {
+                    let TimeStamp = NSDate().timeIntervalSince1970
+                    let activity = "Quality sleep"
+                    let measurementtype = "Hours of sleep"
+                    
+                    let dash = dashboardValue.init(type: type, datapoint: sleepValue , timestamp: TimeStamp, activity:activity, measurementtype:measurementtype)
+                    
+                    completion(dash)
+                    
+                }else{
+                    let TimeStamp = receivedMessage["TimeStamp"] as! Double
+                    let activity = "Quality sleep"
+                    let measurementtype = "Hours of sleep"
+                    
+                    let dash = dashboardValue.init(type: type, datapoint: sleepValue , timestamp: TimeStamp, activity:activity, measurementtype:measurementtype)
+                    
+                    completion(dash)
+                }
                 
-                completion(dash)
+                
                 
             }
                                                                                                 
@@ -92,13 +140,37 @@ class dashboardValue {
                 
                 let type = " "
                 let Duration = receivedMessage["Duration"] as! Int
-                let TimeStamp = receivedMessage["TimeStamp"] as! Double
-                let activity = "Stretch"
-                let measurementtype = "duration"
+//                let TimeStamp = receivedMessage["TimeStamp"] as! Double
+//                let activity = "Stretch"
+//                let measurementtype = "duration"
+//
+//                let dash = dashboardValue.init(type: type, datapoint: Duration , timestamp: TimeStamp, activity:activity, measurementtype:measurementtype)
+//
+//                completion(dash)
+//
                 
-                let dash = dashboardValue.init(type: type, datapoint: Duration , timestamp: TimeStamp, activity:activity, measurementtype:measurementtype)
                 
-                completion(dash)
+                if receivedMessage["TimeStamp"] == nil
+                {
+                    let TimeStamp = NSDate().timeIntervalSince1970
+                    let activity = "Stretch"
+                    let measurementtype = "duration"
+                    
+                    let dash = dashboardValue.init(type: type, datapoint: Duration , timestamp: TimeStamp, activity:activity, measurementtype:measurementtype)
+                    
+                    completion(dash)
+                    
+                }else{
+                    let TimeStamp = receivedMessage["TimeStamp"] as! Double
+                    let activity = "Stretch"
+                    let measurementtype = "duration"
+                    
+                    let dash = dashboardValue.init(type: type, datapoint: Duration , timestamp: TimeStamp, activity:activity, measurementtype:measurementtype)
+                    
+                    completion(dash)
+                }
+                
+                
                 
             }
             
@@ -116,17 +188,41 @@ class dashboardValue {
                 let value = snapshot.value as! [String: Any]
                 
                 let Duration = value["water"] as! Int
-                let TimeStamp = value["TimeStamp"] as! Double
+               // let TimeStamp = value["TimeStamp"] as! Double
                                 
             //    let Duration = receivedMessage["water"] as! Int
              //   let TimeStamp = receivedMessage["TimeStamp"] as! Double
             
-                let activity = "Water"
-                let measurementtype = "amount"
+//                let activity = "Water"
+//                let measurementtype = "amount"
+//
+//                let dash = dashboardValue.init(type: type, datapoint: Duration , timestamp: TimeStamp, activity:activity, measurementtype:measurementtype)
+//
+//                completion(dash)
                 
-                let dash = dashboardValue.init(type: type, datapoint: Duration , timestamp: TimeStamp, activity:activity, measurementtype:measurementtype)
                 
-                completion(dash)
+                if value["TimeStamp"] == nil
+                {
+                    let TimeStamp = NSDate().timeIntervalSince1970
+                    let activity = "Water"
+                    let measurementtype = "amount"
+                    
+                    let dash = dashboardValue.init(type: type, datapoint: Duration , timestamp: TimeStamp, activity:activity, measurementtype:measurementtype)
+                    
+                    completion(dash)
+                    
+                }else{
+                    let TimeStamp = value["TimeStamp"] as! Double
+                    let activity = "Water"
+                    let measurementtype = "amount"
+                    
+                    let dash = dashboardValue.init(type: type, datapoint: Duration , timestamp: TimeStamp, activity:activity, measurementtype:measurementtype)
+                    
+                    completion(dash)
+                }
+                
+                
+                
                 
             }
                                                                                                 
@@ -140,13 +236,35 @@ class dashboardValue {
                 
                 let type = receivedMessage["name"] as! String
                 let calories = receivedMessage["calories"] as! Int
-                let TimeStamp = receivedMessage["TimeStamp"] as! Double
-                let activity = "Food intake"
-                let measurementtype = "Calories counter"
+//                let TimeStamp = receivedMessage["TimeStamp"] as! Double
+//                let activity = "Food intake"
+//                let measurementtype = "Calories counter"
+//
+//                let dash = dashboardValue.init(type: type, datapoint: calories , timestamp: TimeStamp, activity:activity, measurementtype:measurementtype)
+//
+//                completion(dash)
                 
-                let dash = dashboardValue.init(type: type, datapoint: calories , timestamp: TimeStamp, activity:activity, measurementtype:measurementtype)
                 
-                completion(dash)
+                if receivedMessage["TimeStamp"] == nil
+                {
+                    let TimeStamp = NSDate().timeIntervalSince1970
+                    let activity = "Food intake"
+                    let measurementtype = "Calories counter"
+                    
+                    let dash = dashboardValue.init(type: type, datapoint: calories , timestamp: TimeStamp, activity:activity, measurementtype:measurementtype)
+                    
+                    completion(dash)
+                    
+                }else{
+                    let TimeStamp = receivedMessage["TimeStamp"] as! Double
+                    let activity = "Food intake"
+                    let measurementtype = "Calories counter"
+                    
+                    let dash = dashboardValue.init(type: type, datapoint: calories , timestamp: TimeStamp, activity:activity, measurementtype:measurementtype)
+                    
+                    completion(dash)
+                }
+                
                 
             }
                                                                                                     
@@ -163,14 +281,35 @@ class dashboardValue {
                 
                 let type = " "
                 let calories = receivedMessage["Stress"] as! Int
-
-                let TimeStamp = receivedMessage["TimeStamp"] as! Double
-                let activity = "Stress"
-                let measurementtype = "scale"
                 
-                let dash = dashboardValue.init(type: type, datapoint: calories , timestamp: TimeStamp, activity:activity, measurementtype:measurementtype)
                 
-                completion(dash)
+                if receivedMessage["TimeStamp"] == nil
+                {
+                    let TimeStamp = NSDate().timeIntervalSince1970
+                    let activity = "Stress"
+                    let measurementtype = "scale"
+                    
+                    let dash = dashboardValue.init(type: type, datapoint: calories , timestamp: TimeStamp, activity:activity, measurementtype:measurementtype)
+                    
+                    completion(dash)
+                    
+                }else{
+                    let TimeStamp = receivedMessage["TimeStamp"] as! Double
+                    let activity = "Stress"
+                    let measurementtype = "scale"
+                    let dash = dashboardValue.init(type: type, datapoint: calories , timestamp: TimeStamp, activity:activity, measurementtype:measurementtype)
+                    
+                    completion(dash)
+                }
+        
+                
+//                let TimeStamp = receivedMessage["TimeStamp"] as! Double
+//                let activity = "Stress"
+//                let measurementtype = "scale"
+//
+//                let dash = dashboardValue.init(type: type, datapoint: calories , timestamp: TimeStamp, activity:activity, measurementtype:measurementtype)
+//
+//                completion(dash)
                 
             }
                                                                                                     

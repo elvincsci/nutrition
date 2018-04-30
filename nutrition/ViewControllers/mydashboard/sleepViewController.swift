@@ -51,7 +51,8 @@ class sleepViewController: UIViewController {
             let timestamp = NSDate().timeIntervalSince1970
             let StressTimestamp = Stress.child("TimeStamp")
             StressTimestamp.setValue(timestamp)
-            
+            _ = navigationController?.popViewController(animated: true)
+
         }
         else
         {

@@ -91,7 +91,8 @@ class WeightViewController: UIViewController {
             
             let BodyMass = Nokiacredentials.child("BodyMass")
             BodyMass.setValue(Int(BMI.text!))
-            
+            _ = navigationController?.popViewController(animated: true)
+
         }
         
         

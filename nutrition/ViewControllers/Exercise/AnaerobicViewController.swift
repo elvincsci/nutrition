@@ -51,6 +51,8 @@ class AnaerobicViewController: UIViewController {
         let timestamp = NSDate().timeIntervalSince1970
         let StressTimestamp = Anaerobicdata.child("TimeStamp")
         StressTimestamp.setValue(timestamp)
+        _ = navigationController?.popViewController(animated: true)
+
         
     }
     
