@@ -68,20 +68,20 @@ class dashboardValue {
         })
         
         
-        Database.database().reference().child("users").child(userID!).child("Sleep").observe(.childAdded,
+        Database.database().reference().child("users").child(userID!).child("Stretch").observe(.childAdded,
                                                                                              with: { (snapshot) in
             if snapshot.exists() {
                 
                 let receivedMessage = snapshot.value as! [String: Any]
                 
                 let type = " "
-                let sleepValue = receivedMessage["sleepValue"] as! Int
+                let Duration = receivedMessage["Duration"] as! Int
                 let TimeStamp = receivedMessage["TimeStamp"] as! Double
                 
-                let activity = "Quality sleep"
-                let measurementtype = "Hours of sleep"
+                let activity = "Stretch"
+                let measurementtype = "duration"
                 
-                let dash = dashboardValue.init(type: type, datapoint: sleepValue , timestamp: TimeStamp, activity:activity, measurementtype:measurementtype)
+                let dash = dashboardValue.init(type: type, datapoint: Duration , timestamp: TimeStamp, activity:activity, measurementtype:measurementtype)
                 
                 completion(dash)
                 
@@ -90,9 +90,68 @@ class dashboardValue {
         })
         
         
+        Database.database().reference().child("users").child(userID!).child("Stretch").observe(.childAdded,
+                                                                                               with: { (snapshot) in
+            if snapshot.exists() {
+                
+                let receivedMessage = snapshot.value as! [String: Any]
+                
+                let type = " "
+                let Duration = receivedMessage["Duration"] as! Int
+                let TimeStamp = receivedMessage["TimeStamp"] as! Double
+                
+                let activity = "Stretch"
+                let measurementtype = "duration"
+                
+                let dash = dashboardValue.init(type: type, datapoint: Duration , timestamp: TimeStamp, activity:activity, measurementtype:measurementtype)
+                
+                completion(dash)
+                
+            }
+            
+        })
         
-                                                                            
+        Database.database().reference().child("users").child(userID!).child("WaterIntake").observe(.childAdded,
+                                                                                               with: { (snapshot) in
+            if snapshot.exists() {
+                
+                let receivedMessage = snapshot.value as! [String: Any]
+                
+                let type = " "
+                let Duration = receivedMessage["water"] as! Int
+                let TimeStamp = receivedMessage["TimeStamp"] as! Double
+                
+                let activity = "Water"
+                let measurementtype = "amount"
+                
+                let dash = dashboardValue.init(type: type, datapoint: Duration , timestamp: TimeStamp, activity:activity, measurementtype:measurementtype)
+                
+                completion(dash)
+                
+            }
+                                                                                                
+        })
         
+        Database.database().reference().child("users").child(userID!).child("foodIntake").observe(.childAdded,
+                                                                                                   with: { (snapshot) in
+            if snapshot.exists() {
+                
+                let receivedMessage = snapshot.value as! [String: Any]
+                
+                let type = receivedMessage["name"] as! String
+                let calories = receivedMessage["calories"] as! Int
+                let TimeStamp = receivedMessage["TimeStamp"] as! Double
+                
+                let activity = "Food intake"
+                let measurementtype = "Calories counter"
+                
+                let dash = dashboardValue.init(type: type, datapoint: calories , timestamp: TimeStamp, activity:activity, measurementtype:measurementtype)
+                
+                completion(dash)
+                
+            }
+                                                                                                    
+        })
         
     }
 
