@@ -27,9 +27,13 @@ class WaterViewController: UIViewController {
     
     @IBAction func plusFiveButton(_ sender: Any) {
         
-        let number = Int(waterInput.text!)! + 5
-        
-        waterInput.text = number.description
+        if waterInput.text! != ""
+        {
+            let number = Int(waterInput.text!)! + 5
+            waterInput.text = number.description
+        }else{
+            waterInput.text = 2.description
+        }
     }
     
     @IBAction func plusTwoButton(_ sender: Any) {
@@ -40,8 +44,7 @@ class WaterViewController: UIViewController {
             waterInput.text = number.description
         }else
         {
-            let number = 2
-            waterInput.text = number.description
+            waterInput.text = 2.description
         }
 
     }
@@ -55,8 +58,7 @@ class WaterViewController: UIViewController {
             waterInput.text = number.description
         }else
         {
-            let number = 1
-            waterInput.text = number.description
+            waterInput.text = 1.description
         }
     }
     

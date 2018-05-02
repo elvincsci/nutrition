@@ -154,7 +154,7 @@ class dashboardValue {
             
         })
         
-        Database.database().reference().child("users").child(userID!).child("WaterIntake").observe(.value,
+        Database.database().reference().child("users").child(userID!).child("WaterIntake").observeSingleEvent(of: .value,
                                                                                                    with: { (snapshot) in
                                                                             
         if snapshot.exists(){
@@ -258,37 +258,31 @@ class dashboardValue {
         
         
         
-        Database.database().reference().child("users").child(userID!).child("Stress").observe(.childAdded,
-          with: { (snapshot) in
+        Database.database().reference().child("users").child(userID!).child("Stress").observeSingleEvent(of: .value,
+                                                                                                         with: { (snapshot) in
+                                                                                                            
             
             
-            if snapshot.exists(){
+        if snapshot.exists(){
             
-                
-                let receivedMessage = snapshot.value as! [String: Any]
+            let value = snapshot.value as! [String: Any]
+            
+            for current in value
+            {
+                let receivedMessage = current.value as! [String: Any]
                 
                 let type = " "
                 let calories = receivedMessage["Stress"] as! Int
+                let TimeStamp = receivedMessage["TimeStamp"] as! Double
+                let activity = "Stress"
+                let measurementtype = "scale"
+                let dash = dashboardValue.init(type: type, datapoint: calories , timestamp: TimeStamp, activity:activity, measurementtype:measurementtype)
                 
+                completion(dash)
                 
-                if receivedMessage["TimeStamp"] == nil
-                {
-                    let TimeStamp = NSDate().timeIntervalSince1970
-                    let activity = "Stress"
-                    let measurementtype = "scale"
-                    
-                    let dash = dashboardValue.init(type: type, datapoint: calories , timestamp: TimeStamp, activity:activity, measurementtype:measurementtype)
-                    
-                    completion(dash)
-                    
-                }else{
-                    let TimeStamp = receivedMessage["TimeStamp"] as! Double
-                    let activity = "Stress"
-                    let measurementtype = "scale"
-                    let dash = dashboardValue.init(type: type, datapoint: calories , timestamp: TimeStamp, activity:activity, measurementtype:measurementtype)
-                    
-                    completion(dash)
-                }
+            }
+                
+        
         
                 
 //                let TimeStamp = receivedMessage["TimeStamp"] as! Double

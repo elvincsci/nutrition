@@ -60,15 +60,15 @@ class MainViewController: UIViewController,UITableViewDelegate, UITableViewDataS
             
             weakSelf?.dashboards.sort{ $0.timestamp > $1.timestamp }
             
-//            DispatchQueue.main.async {
-//                
-//                if let state = weakSelf?.dashboards.isEmpty, state == false {
-//                    
-//                    weakSelf?.tableView.reloadData()
-//                    
-//                    
-//                }
-//            }
+            DispatchQueue.main.async {
+                
+                if let state = weakSelf?.dashboards.isEmpty, state == false {
+                    
+                    weakSelf?.tableView.reloadData()
+                    
+                    
+                }
+            }
             
 
             
@@ -77,6 +77,7 @@ class MainViewController: UIViewController,UITableViewDelegate, UITableViewDataS
 
     }
     
+    var counter = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,11 +93,16 @@ class MainViewController: UIViewController,UITableViewDelegate, UITableViewDataS
 
     }
 
+    override func viewDidDisappear(_ animated: Bool) {
+        counter = 2
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
-        
-        //self.fetchData()
-        //tableView.reloadData()
-        
+        if counter == 2
+        {
+            dashboards.removeAll()
+            self.fetchData()
+        }
     }
     
     override func didReceiveMemoryWarning() {

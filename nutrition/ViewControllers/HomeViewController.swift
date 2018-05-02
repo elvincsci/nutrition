@@ -91,8 +91,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.lastContentOffset = scrollView.contentOffset.y;
     }
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -106,15 +104,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Do any additional setup after loading the view.
     }
 
-    
-    override func viewWillAppear(_ animated: Bool) {
 
-       /// tableView.reloadData()
-        
-    }
-    
     override func viewDidDisappear(_ animated: Bool) {
-        print("herer")
+        videos.removeAll()
+        self.fetchData()
     }
     
     override func didReceiveMemoryWarning() {

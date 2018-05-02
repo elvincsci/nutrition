@@ -37,7 +37,6 @@ class sleepViewController: UIViewController {
         
         if SleepTextField.text != ""
         {
-        //print(Int(slider.value).description)
 
             let ref = Database.database().reference()
             
