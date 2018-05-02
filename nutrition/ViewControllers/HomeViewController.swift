@@ -30,26 +30,27 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         Video.downloadAllMessages(completion: {[weak weakSelf = self] (video) in
             
-            
             weakSelf?.videos.append(video)
             weakSelf?.tableView.reloadData()
 
             
-            //weakSelf?.videos.sort{ $0.timestamp < $1.timestamp }
-            
-//            DispatchQueue.main.async {
-//
-//                if let state = weakSelf?.videos.isEmpty, state == false {
-//
-//                    weakSelf?.tableView.reloadData()
-//
-//
-//                }
-//            }
-//
+            weakSelf?.videos.sort{ $0.timestamp > $1.timestamp }
+
+            DispatchQueue.main.async {
+
+                if let state = weakSelf?.videos.isEmpty, state == false {
+
+                    weakSelf?.tableView.reloadData()
+
+
+                }
+            }
+
             
         })
     } 
+    
+    
     
 
     //MARK: Delegates
@@ -105,6 +106,16 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Do any additional setup after loading the view.
     }
 
+    
+    override func viewWillAppear(_ animated: Bool) {
+
+       /// tableView.reloadData()
+        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        print("herer")
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

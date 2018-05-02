@@ -57,13 +57,25 @@ class MainViewController: UIViewController,UITableViewDelegate, UITableViewDataS
         dashboardValue.downloadAllMessages(completion: {[weak weakSelf = self] (video) in
             weakSelf?.dashboards.append(video)
             weakSelf?.tableView.reloadData()
+            
+            weakSelf?.dashboards.sort{ $0.timestamp > $1.timestamp }
+            
+//            DispatchQueue.main.async {
+//                
+//                if let state = weakSelf?.dashboards.isEmpty, state == false {
+//                    
+//                    weakSelf?.tableView.reloadData()
+//                    
+//                    
+//                }
+//            }
+            
+
+            
+            
         })
 
     }
-    
-    
-    
-    
     
     
     override func viewDidLoad() {
@@ -80,6 +92,13 @@ class MainViewController: UIViewController,UITableViewDelegate, UITableViewDataS
 
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        
+        //self.fetchData()
+        //tableView.reloadData()
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

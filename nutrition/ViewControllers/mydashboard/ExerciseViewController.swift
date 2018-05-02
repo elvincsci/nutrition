@@ -104,10 +104,6 @@ class ExerciseViewController: UIViewController {
 //
 //            childViewController.didMove(toParentViewController: self)
             
-            
-            
-            
-            
             break
         case 3:
             

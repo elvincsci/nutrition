@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 import Firebase
 
 
@@ -17,6 +18,8 @@ class WeightViewController: UIViewController {
     @IBOutlet weak var BFI: UITextField!
     @IBOutlet weak var Weight: UITextField!
     
+    var ref: DatabaseReference!
+
     func fetchData() {
         
         let userID = Auth.auth().currentUser?.uid
@@ -61,7 +64,88 @@ class WeightViewController: UIViewController {
     
     @IBAction func ConnectScale(_ sender: Any) {
         
-        
+        if connetDeviceOutlet.titleLabel?.text == "Sync Using Nokia Scale"
+        {
+           
+            let userID = Auth.auth().currentUser?.uid
+            
+            Database.database().reference().child("users").child(userID!).child("Nokia credentials").observeSingleEvent(of: .value
+                , with: { (snapshot) in
+                    
+                let receivedMessage = snapshot.value as! [String: Any]
+
+                //let type = receivedMessage["AerobicType"] as! String
+
+                // Get user value
+                //let value = snapshot.value as? NSDictionary
+                let NokiaSecretStr = receivedMessage["NokiaSecretStr"] as! String
+                let NokiaTokenStr = receivedMessage["NokiaTokenStr"] as! String
+                let NokiaUserID = receivedMessage["NokiaUserID"] as! String
+                
+                //  let user = User(username: username)
+                
+                
+             let jsonUrlString = "http://localhost:8080/getlast" + "?SecretStr=" + NokiaSecretStr + "&TokenStr=" + NokiaTokenStr + "&UserID=" + NokiaUserID
+                
+                
+                guard let url = URL(string: jsonUrlString) else { return }
+                
+                URLSession.shared.dataTask(with: url) { (data, response, err) in
+                    
+                    guard let data = data else { return }
+                    
+                    
+                    if(err != nil){
+                        print("error")
+                    }else{
+                        
+                        do {
+                            
+                            let animeJsonStuff =  try JSONDecoder().decode(Weight_Json.self, from: data)
+                            
+                            DispatchQueue.main.async {
+                                
+                                for jsonMedia in animeJsonStuff.Weight_Data {
+                                    
+                                    
+                                    self.ref = Database.database().reference()
+                                    
+                                    let uid = Auth.auth().currentUser?.uid
+                                    
+                                    let Nokiacredentials = self.ref.child("users").child(uid!).child("Userweight").childByAutoId()
+                                    
+                                    let NokiaSecretStr = Nokiacredentials.child("UserDate")
+                                    NokiaSecretStr.setValue(jsonMedia.Weight_date!)
+                                    
+                                    
+                                    let NokiaTokenStr = Nokiacredentials.child("UserWeight")
+                                    NokiaTokenStr.setValue(jsonMedia.Weight_kg)
+                                    
+                                    
+                                }
+                            }
+                            
+                        } catch let jsonErr {
+                            print("Error serializing json:", jsonErr)
+                        }
+                        
+                    }
+                    
+                    }.resume()
+
+                
+                // ...
+            }) { (error) in
+                print(error.localizedDescription)
+            }
+
+            _ = navigationController?.popViewController(animated: true)
+
+        }else{
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "device") as! deviceViewController
+            self.show(vc, sender: self)
+        }
+    
     }
     
     @IBAction func Submit(_ sender: Any) {
