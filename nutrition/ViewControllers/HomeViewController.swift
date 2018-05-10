@@ -23,9 +23,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 300
     }
-    
-    
-    
+
     func fetchData() {
         
         Video.downloadAllMessages(completion: {[weak weakSelf = self] (video) in
@@ -42,22 +40,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
                     weakSelf?.tableView.reloadData()
 
-
                 }
             }
-
-            
         })
     } 
     
-    
-    
-
     //MARK: Delegates
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return 5
         return self.videos.count
-
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -99,6 +89,16 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
+        
+//        let isoDate = "2017-11-20 13:18:12 -0600 CST"
+//
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss -zzzz 'CST'"
+//        //dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+//        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale!
+//        let date = dateFormatter.date(from: isoDate)!
+//        print(date.description)
         
         // Do any additional setup after loading the view.
         // Do any additional setup after loading the view.

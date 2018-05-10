@@ -26,32 +26,26 @@ class SettingViewController: QuickTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let time = #imageLiteral(resourceName: "iconmonstr-time")
+        //let time = #imageLiteral(resourceName: "iconmonstr-time")
+        
+        
+        //Icon(image: #imageLiteral(resourceName: "device"))
         
         tableContents = [
         
             Section(title: "Navigation", rows: [
                 
-                NavigationRow(title: "Shop", subtitle: .none, icon: Icon(image: #imageLiteral(resourceName: "device")), action: weakify(self, type(of: self).showShop)),
+                NavigationRow(title: "Shop", subtitle: .none, icon: .none, action: weakify(self, type(of: self).showShop)),
                 
-                NavigationRow(title: "Messages", subtitle: .none, icon: Icon(image: #imageLiteral(resourceName: "device")), action: weakify(self, type(of: self).showMessages)),
+                NavigationRow(title: "Messages", subtitle: .none, icon: .none, action: weakify(self, type(of: self).showMessages)),
                 
-                NavigationRow(title: "Devices", subtitle: .none, icon: Icon(image: #imageLiteral(resourceName: "device")), action: weakify(self, type(of: self).showAddDevice)),
+                NavigationRow(title: "Devices", subtitle: .none, icon: .none, action: weakify(self, type(of: self).showAddDevice)),
                 
-                NavigationRow(title: "My Profile", subtitle: .none, icon: Icon(image: #imageLiteral(resourceName: "profile")), action: weakify(self, type(of: self).showDetail)),
+                NavigationRow(title: "My Profile", subtitle: .none, icon: .none, action: weakify(self, type(of: self).showDetail)),
                 
                 ]),
 
-            
-//            Section(title: "SECURITY", rows: [
-//
-//                SwitchRow<SwitchCell>(title: "Use Touch ID", switchValue: false, icon: Icon(image: #imageLiteral(resourceName: "finger2")), action: weakify(self, type(of: self).didToggleSwitch)),
-//
-//                NavigationRow(title: "Notification", subtitle: .none, icon: Icon(image: #imageLiteral(resourceName: "profile")), action: weakify(self, type(of: self).showDetail)),
-//
-//                ]),
 
-            
             Section(title: "", rows: [
                 
                 TapActionRow<TapActionCell>(title: "Logout", action: weakify(self, type(of: self).showAlert))

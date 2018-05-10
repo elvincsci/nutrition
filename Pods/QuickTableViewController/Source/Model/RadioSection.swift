@@ -32,7 +32,7 @@ open class RadioSection: Section {
   // MARK: - Initializer
 
   /// Initializes a section with a title, containing rows and an optional footer.
-  public init(title: String?, options: [OptionRow<UITableViewCell>], footer: String? = nil) {
+  public init(title: String?, options: [OptionRowCompatible], footer: String? = nil) {
     self.options = options
     super.init(title: title, rows: [], footer: footer)
   }
@@ -49,17 +49,11 @@ open class RadioSection: Section {
       return options
     }
     set {
-      options = rows as? [OptionRow] ?? options
+      options = newValue as? [OptionRowCompatible] ?? options
     }
   }
 
   // MARK: - RadioSection
-
-  @available(*, deprecated, renamed: "alwaysSelectsOneOption")
-  public var alwaysSelectOneOption: Bool {
-    get { return alwaysSelectsOneOption }
-    set { alwaysSelectsOneOption = newValue }
-  }
 
   /// A boolean that indicates whether there's always one option selected.
   open var alwaysSelectsOneOption: Bool = false {
@@ -71,11 +65,20 @@ open class RadioSection: Section {
   }
 
   /// The array of options in the section. It's identical to the `rows`.
-  open private(set) var options: [OptionRow<UITableViewCell>]
+  open private(set) var options: [OptionRowCompatible]
+
+  /// Returns the selected index, or nil when nothing is selected.
+  open var indexOfSelectedOption: Int? {
+    return options.index { $0.isSelected }
+  }
 
   /// Returns the selected option row, or nil when nothing is selected.
-  open var selectedOption: OptionRow<UITableViewCell>? {
-    return options.first { $0.isSelected }
+  open var selectedOption: OptionRowCompatible? {
+    if let index = indexOfSelectedOption {
+      return options[index]
+    } else {
+      return nil
+    }
   }
 
   /// Toggle the selection of the given option and keep options mutually exclusive.
@@ -83,7 +86,7 @@ open class RadioSection: Section {
   ///
   /// - Parameter option: The option to flip the `isSelected` state.
   /// - Returns: The indexes of changed options.
-  open func toggle(_ option: OptionRow<UITableViewCell>) -> IndexSet {
+  open func toggle(_ option: OptionRowCompatible) -> IndexSet {
     if option.isSelected && alwaysSelectsOneOption {
       return []
     }
@@ -93,14 +96,15 @@ open class RadioSection: Section {
     }
 
     if option.isSelected {
-      return options.index(of: option).map { [$0] } ?? []
+      // Deselect the selected option.
+      return options.index(where: { $0 === option }).map { [$0] } ?? []
     }
 
     var toggledIndexes: IndexSet = []
 
     for (index, element) in options.enumerated() {
       switch element {
-      case option:
+      case let target where target === option:
         toggledIndexes.insert(index)
       case _ where element.isSelected:
         toggledIndexes.insert(index)

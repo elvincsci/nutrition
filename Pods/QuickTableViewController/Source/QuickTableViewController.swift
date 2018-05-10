@@ -71,6 +71,8 @@ open class QuickTableViewController: UIViewController,
     view.addSubview(tableView)
     tableView.frame = view.bounds
     tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    tableView.rowHeight = UITableViewAutomaticDimension
+    tableView.estimatedRowHeight = 44
     tableView.dataSource = self
     tableView.delegate = self
   }
@@ -125,23 +127,32 @@ open class QuickTableViewController: UIViewController,
     let row = section.rows[indexPath.row]
 
     switch (section, row) {
-    case let (radio as RadioSection, option as OptionRow<UITableViewCell>):
-      let indexPaths: [IndexPath] = radio.toggle(option).map {
+    case let (radio as RadioSection, option as OptionRowCompatible):
+      let changes: [IndexPath] = radio.toggle(option).map {
         IndexPath(row: $0, section: indexPath.section)
       }
-      tableView.reloadRows(at: indexPaths, with: .automatic)
+      if changes.isEmpty {
+        tableView.deselectRow(at: indexPath, animated: false)
+      } else {
+        tableView.reloadData()
+      }
 
-    case let (_, option as OptionRow<UITableViewCell>):
+    case let (_, option as OptionRowCompatible):
       // Allow OptionRow to be used without RadioSection.
       option.isSelected = !option.isSelected
-      tableView.reloadRows(at: [indexPath], with: .automatic)
+      tableView.reloadData()
 
-    case (_, is TapActionRow<TapActionCell>):
+    case (_, is TapActionRowCompatible):
       tableView.deselectRow(at: indexPath, animated: true)
-      row.action?(row)
+      DispatchQueue.main.async {
+        row.action?(row)
+      }
 
     case let (_, row) where row.isSelectable:
-      row.action?(row)
+      // Avoid some unwanted animation when the action also involves table view reload
+      DispatchQueue.main.async {
+        row.action?(row)
+      }
 
     default:
       break
@@ -153,11 +164,10 @@ open class QuickTableViewController: UIViewController,
   open func switchCell(_ cell: SwitchCell, didToggleSwitch isOn: Bool) {
     guard
       let indexPath = tableView.indexPath(for: cell),
-      let row = tableContents[indexPath.section].rows[indexPath.row] as? SwitchRow
+      let row = tableContents[indexPath.section].rows[indexPath.row] as? SwitchRowCompatible
     else {
       return
     }
-
     row.switchValue = isOn
   }
 

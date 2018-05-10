@@ -24,7 +24,7 @@
 //  SOFTWARE.
 //
 
-import Foundation
+import UIKit
 
 extension UITableViewCell: Reusable {}
 
@@ -38,7 +38,7 @@ internal extension Reusable {
 
   internal static var reuseIdentifier: String {
     let type = String(describing: self)
-    return type.matches(of: "^\\(([\\w\\d]+)\\sin\\s_[0-9A-F]+\\)$").last ?? type
+    return type.matches(of: String.typeDescriptionPattern).last ?? type
   }
 
 }
@@ -46,9 +46,18 @@ internal extension Reusable {
 
 internal extension String {
 
-  func matches(of pattern: String) -> [String] {
+  internal static var typeDescriptionPattern: String {
+    // For the types in the format of "(CustomCell in _B5334F301B8CC6AA00C64A6D)"
+    return "^\\(([\\w\\d]+)\\sin\\s_[0-9A-F]+\\)$"
+  }
+
+  internal func matches(of pattern: String) -> [String] {
     let regex = try? NSRegularExpression(pattern: pattern, options: .caseInsensitive)
-    let fullText = NSRange(location: 0, length: characters.count)
+    #if swift(>=3.2)
+      let fullText = NSRange(location: 0, length: count)
+    #else
+      let fullText = NSRange(location: 0, length: characters.count)
+    #endif
 
     guard let matches = regex?.matches(in: self, options: [], range: fullText) else {
       return []
@@ -56,7 +65,11 @@ internal extension String {
 
     return matches.reduce([]) { accumulator, match in
       accumulator + (0..<match.numberOfRanges).map {
-        (self as NSString).substring(with: match.range(at: $0))
+        #if swift(>=4)
+          return (self as NSString).substring(with: match.range(at: $0))
+        #else
+          return (self as NSString).substring(with: match.rangeAt($0))
+        #endif
       }
     }
   }

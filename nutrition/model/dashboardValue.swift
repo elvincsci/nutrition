@@ -22,9 +22,50 @@ class dashboardValue {
         
     let userID = Auth.auth().currentUser?.uid
         
+
+        Database.database().reference().child("users").child(userID!).child("Userweight").observeSingleEvent(of: .value
+            , with: { (snapshot) in
+
+                if snapshot.exists(){
+
+                    let receivedMessage = snapshot.value as! [String: Any]
+
+                    for current in receivedMessage
+                    {
+                        let receivedMessage = current.value as! [String: Any]
+
+                        let type = " "
+                        let UserWeight = Int(receivedMessage["UserWeight"] as! Double)
+
+                        let UserDates = receivedMessage["UserDate"] as! String
+
+                        let UserDate = String(UserDates.characters.dropLast(3))   // "01234567"
+                
+                        let dateFormatter = DateFormatter()
+                        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss -zzzz"
+                        //dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+                        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale!
+                        let date = dateFormatter.date(from: UserDate)!
+
+                        let TimeStamp = date.timeIntervalSince1970
+
+                        let activity = "User Weight"
+                        let measurementtype = "Weight"
+
+                        let dash = dashboardValue.init(type: type, datapoint: UserWeight , timestamp: TimeStamp, activity:activity, measurementtype:measurementtype)
+
+                        completion(dash)
+
+                    }
+                }
+        })
+
+        
+        
+        
         Database.database().reference().child("users").child(userID!).child("Aerobic").observeSingleEvent(of: .value
             , with: { (snapshot) in
-            
+                
             if snapshot.exists(){
                 
                 let receivedMessage = snapshot.value as! [String: Any]
@@ -45,16 +86,10 @@ class dashboardValue {
                     completion(dash)
                     
                 }
-                
-                
              }
-        
         })
         
-        
-        
-        
-        
+ 
         Database.database().reference().child("users").child(userID!).child("Sleep").observeSingleEvent(of: .value
             , with: { (snapshot) in
                                                                                                 

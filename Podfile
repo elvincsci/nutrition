@@ -13,8 +13,8 @@ target 'nutrition' do
 	pod 'Firebase/Storage'
 	pod 'Firebase/Core'
 	pod 'QuickTableViewController'
-  	pod "Weakify", git: "https://github.com/klundberg/Weakify.git", tag: "v0.4.0"
-
+  	#pod "Weakify", git: "https://github.com/klundberg/Weakify.git", tag: "v0.4.0"
+	pod "Weakify", "~> 0.4.0"
 
   target 'nutritionTests' do
     inherit! :search_paths

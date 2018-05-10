@@ -69,10 +69,7 @@ class MainViewController: UIViewController,UITableViewDelegate, UITableViewDataS
                     
                 }
             }
-            
 
-            
-            
         })
 
     }
@@ -90,6 +87,12 @@ class MainViewController: UIViewController,UITableViewDelegate, UITableViewDataS
         self.tableView.dataSource = self
         // Do any additional setup after loading the view.
         self.fetchData()
+        
+        if self.dashboards.count == 0
+        {
+            
+            
+        }
 
     }
 

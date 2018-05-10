@@ -167,14 +167,12 @@ class deviceViewController: UIViewController {
         
         if current_Text == "Add" {
             
-            
             let jsonUrlString = "http://localhost:8080/geturl"
             guard let url = URL(string: jsonUrlString) else { return }
             
             URLSession.shared.dataTask(with: url) { (data, response, err) in
                 
                 guard let data = data else { return }
-                
                 
                 if(err != nil){
                     print("error")
@@ -183,13 +181,11 @@ class deviceViewController: UIViewController {
                     do {
                         
                         let courses = try JSONDecoder().decode(Course.self, from: data)
-                        
-                        
+
                         DispatchQueue.main.async {
                             self.labelNokia.text = courses.Url_Link
                             urlLink = courses.Url_Link
                             button.setTitle("Add now", for: .normal)
-                            
                         }
                         
                     } catch let jsonErr {

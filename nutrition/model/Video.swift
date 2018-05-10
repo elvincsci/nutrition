@@ -36,22 +36,6 @@ class Video {
             
             let videoLinks = NSURL(string: videoLinksString)
 
-           /// let videoLinks = URL.init(string: "http://sample-videos.com/video/mp4/360/big_buck_bunny_360p_10mb.mp4")!
-            
-            //let thumbNailimageURL = NSURL(string: thumbNailimageURLString)
-            
-            //print("here")
-            //print(thumbNailimageURL!)
-            
-//            if let data = try? Data(contentsOf: thumbNailimageURL! as URL)
-//            {
-//                let thumbNailimage = UIImage(data: data)!
-//                //print(thumbNailimage)
-//
-//                //let video = Video.init(content: content, thumbNailimage: thumbNailimage , timestamp: timestamp, videoLink: videoLink)
-//                completion(video)
-//
-//            }
             
             let url = URL(string: thumbNailimageURLString)
             let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch

@@ -36,8 +36,8 @@ class Message {
                         }
                         let content = receivedMessage["content"] as! String
 
-                        let timestamp = receivedMessage["timestamp"] as! Int
-                        
+                        let timestamp = receivedMessage["timeStamp"] as! Int
+            
                         let message = Message.init(type: type, content: content, owner: .receiver, timestamp: timestamp, isRead: true)
                         completion(message)
                                 

@@ -23,17 +23,10 @@ UINavigationControllerDelegate{
     var items = [Message]()
 
     func customization() {
-        //self.imagePicker.delegate = self
         self.tableView.estimatedRowHeight = self.barHeight
-        self.tableView.rowHeight = UITableViewAutomaticDimension + 70
+        self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.contentInset.bottom = self.barHeight
         self.tableView.scrollIndicatorInsets.bottom = self.barHeight
-        self.navigationItem.title = currentUser.displayName
-       // self.navigationItem.setHidesBackButton(true, animated: false)
-        //let icon = UIImage.init(named: "back")?.withRenderingMode(.alwaysOriginal)
-       // let backButton = UIBarButtonItem.init(image: icon!, style: .plain, target: self, action: #selector(self.dismissSelf))
-     //   self.navigationItem.leftBarButtonItem = backButton
-       // self.locationManager.delegate = self
     }
     
     
@@ -78,16 +71,21 @@ UINavigationControllerDelegate{
           //  cell.clearCellData()
             switch self.items[indexPath.row].type {
             case .text:
-                cell.message.text = self.items[indexPath.row].content as! String
-
+                
                 let date = NSDate(timeIntervalSince1970: TimeInterval(self.items[indexPath.row].timestamp))
                 
                 let dayTimePeriodFormatter = DateFormatter()
                 dayTimePeriodFormatter.dateFormat = "MMM dd YYYY"
                 
-                let dateString = dayTimePeriodFormatter.string(from: date as Date)
 
-                cell.messageDate.text = dateString
+                let dateString = dayTimePeriodFormatter.string(from: date as Date)
+                
+                //cell.messageDate.text = dateString
+                
+                cell.message.text = self.items[indexPath.row].content  as! String + "\n\t\t\t\t"+dateString
+
+
+                
             case .photo:
                 if let image = self.items[indexPath.row].image {
                     cell.messageBackground.image = image

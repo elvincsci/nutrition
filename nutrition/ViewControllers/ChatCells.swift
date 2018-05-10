@@ -43,7 +43,6 @@ class ReceiverCell: UITableViewCell {
 
     @IBOutlet var messageBackground: UIImageView!
     @IBOutlet var message: UITextView!
-    @IBOutlet weak var messageDate: UILabel!
     
     func clearCellData()  {
         //self.messageDate.text = nil

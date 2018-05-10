@@ -19,7 +19,7 @@
 		E555E72D2090575700C370E4 /* dashboardValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E555E72C2090575700C370E4 /* dashboardValue.swift */; };
 		E557584D2019472600A2BC4A /* NewsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E557584C2019472600A2BC4A /* NewsListTableViewCell.swift */; };
 		E557584F201966A400A2BC4A /* dashboardCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E557584E201966A400A2BC4A /* dashboardCellTableViewCell.swift */; };
-		E56FA25F1FCCA08200B885A8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E56FA25E1FCCA08200B885A8 /* GoogleService-Info.plist */; };
+		E561E504209A518C00039531 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E561E503209A518C00039531 /* GoogleService-Info.plist */; };
 		E56FA26A1FCFCADD00B885A8 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56FA2691FCFCADD00B885A8 /* Video.swift */; };
 		E58B8A3A1FCB514000045045 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58B8A391FCB514000045045 /* TabController.swift */; };
 		E59B03BE2085277800814945 /* AerobicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59B03BD2085277800814945 /* AerobicViewController.swift */; };
@@ -84,7 +84,7 @@
 		E555E72C2090575700C370E4 /* dashboardValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dashboardValue.swift; sourceTree = "<group>"; };
 		E557584C2019472600A2BC4A /* NewsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListTableViewCell.swift; sourceTree = "<group>"; };
 		E557584E201966A400A2BC4A /* dashboardCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dashboardCellTableViewCell.swift; sourceTree = "<group>"; };
-		E56FA25E1FCCA08200B885A8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E561E503209A518C00039531 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Desktop/AI/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E56FA2691FCFCADD00B885A8 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		E58B8A391FCB514000045045 /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		E59B03BD2085277800814945 /* AerobicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AerobicViewController.swift; sourceTree = "<group>"; };
@@ -214,8 +214,6 @@
 		E5F5A7991FC9CFF800FCD6D9 = {
 			isa = PBXGroup;
 			children = (
-				E5FB72B9208EDB56000491F6 /* ProfileViewController.swift */,
-				E5FB72B7208EB706000491F6 /* PlayerViewController.swift */,
 				E5F5A7A41FC9CFF800FCD6D9 /* nutrition */,
 				E5F5A7B91FC9CFF800FCD6D9 /* nutritionTests */,
 				E5F5A7C41FC9CFF800FCD6D9 /* nutritionUITests */,
@@ -279,6 +277,8 @@
 				E5F5A7A71FC9CFF800FCD6D9 /* landingVC.swift */,
 				E51FF40C204865890085F83F /* deviceViewController.swift */,
 				E530FE97204C80490089E0A8 /* MessagesVC.swift */,
+				E5FB72B9208EDB56000491F6 /* ProfileViewController.swift */,
+				E5FB72B7208EB706000491F6 /* PlayerViewController.swift */,
 				E530FE99204CEE300089E0A8 /* ChatCells.swift */,
 				E54F7483207521EE00234F1D /* addViewController.swift */,
 				E5EF79001FCB854B003302C2 /* SettingViewController.swift */,
@@ -295,7 +295,7 @@
 		E5F5A7D41FC9E19A00FCD6D9 /* Google */ = {
 			isa = PBXGroup;
 			children = (
-				E56FA25E1FCCA08200B885A8 /* GoogleService-Info.plist */,
+				E561E503209A518C00039531 /* GoogleService-Info.plist */,
 			);
 			path = Google;
 			sourceTree = "<group>";
@@ -428,7 +428,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5F5A7B01FC9CFF800FCD6D9 /* LaunchScreen.storyboard in Resources */,
-				E56FA25F1FCCA08200B885A8 /* GoogleService-Info.plist in Resources */,
+				E561E504209A518C00039531 /* GoogleService-Info.plist in Resources */,
 				E5F5A7AD1FC9CFF800FCD6D9 /* Assets.xcassets in Resources */,
 				E5F5A7AB1FC9CFF800FCD6D9 /* Main.storyboard in Resources */,
 			);
@@ -820,6 +820,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EHVJVW42FR;
 				INFOPLIST_FILE = nutrition/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = csci.nutrition;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -836,6 +837,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EHVJVW42FR;
 				INFOPLIST_FILE = nutrition/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = csci.nutrition;
 				PRODUCT_NAME = "$(TARGET_NAME)";
